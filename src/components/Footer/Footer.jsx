@@ -19,7 +19,7 @@ export default function Footer() {
   const notify = () => toast("Thank you for subscribing!");
   return (
     <>
-      <footer className="px-4 divide-y bg-[#222222] text-[--text-color]">
+      <footer className="w-screen px-4 divide-y bg-[#222222] text-[--text-color]">
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
           <div className="w-2/5 max-md:w-full ">
             <a

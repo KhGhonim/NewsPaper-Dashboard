@@ -1,12 +1,18 @@
 "use client";
-import Signin from "components/auth/Signin/Signin";
+import Signin from "components/auth/Sign/Sign";
 import { menuItems } from "constant/constant";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { FaChevronDown, FaRegUser, FaSearch } from "react-icons/fa";
+import {
+  FaChevronDown,
+  FaChevronRight,
+  FaRegUser,
+  FaSearch,
+} from "react-icons/fa";
 import { IoBagOutline, IoClose, IoMenu } from "react-icons/io5";
 import SearchBar from "../SearchBar/SearchBar";
 import CartIPopup from "../Cart/CartIPopup";
+import Link from "next/link";
 
 export default function MainNavbar() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -94,7 +100,7 @@ export default function MainNavbar() {
 
         <div className="hidden md:flex md:flex-grow "></div>
 
-        {/* List of menu items */}
+        {/* List of menu items for large screens */}
         <div className="hidden md:flex">
           <ul className="flex justify-center items-center gap-9 relative">
             {menuItems.map((item, index) => (
@@ -149,41 +155,27 @@ export default function MainNavbar() {
             </div>
 
             <div
-              className={`${Menu} absolute end-0 z-10 mt-2 w-56 rounded-md border border-gray-100 bg-white shadow-lg`}
+              className={`${Menu} absolute right-0 z-10 mt-2 w-56 rounded-lg overflow-hidden   bg-[#292929] shadow-lg text-grey-300`}
               role="menu"
             >
               <div className="p-2">
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                  role="menuitem"
-                >
-                  View on Storefront
-                </a>
-
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                  role="menuitem"
-                >
-                  View Warehouse Info
-                </a>
-
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                  role="menuitem"
-                >
-                  Duplicate Product
-                </a>
-
-                <a
-                  href="#"
-                  className="block rounded-lg px-4 py-2 text-sm text-gray-500 hover:bg-gray-50 hover:text-gray-700"
-                  role="menuitem"
-                >
-                  Unpublish Product
-                </a>
+                {menuItems.map((item, index) => {
+                  return (
+                    <div
+                      key={index}
+                      className=" rounded-lg px-4 py-2 text-sm text-gray-500 hover:text-gray-100 hover:font-bold  hover:translate-x-1 transition-all duration-300 ease-out"
+                      role="menuitem"
+                    >
+                      <Link
+                        href={`/${item.name}`}
+                        className="flex justify-between items-center"
+                      >
+                        <span>{item.name}</span>
+                        <FaChevronRight color="red" className="" size={10} />
+                      </Link>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>

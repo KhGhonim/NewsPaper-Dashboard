@@ -10,6 +10,7 @@ import {
 
 import HotNews from "../HotNews/HotNews";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 export default function UpperNavbar() {
   const [UpperNavbar, setUpperNavbar] = useState(null);
@@ -39,16 +40,20 @@ export default function UpperNavbar() {
       window.removeEventListener("scroll", handleScroll); // Remove the event listener
     };
   }, [UpperNavbar]);
+
+  const day = moment().date();
+  const month = moment().format("MMMM");
+  const year = moment().year();
   return (
     <div className={`${UpperNavbar}  w-screen flex bg-[#292929] h-16`}>
       <div
         className={` container flex items-center w-full px-4 md:px-10 lg:px-20`}
       >
         <div className="text-[#f7fafc] border-r-2 w-24 sm:w-28 border-gray-600 pr-4 flex items-center text-center gap-2 md:gap-3 font-bold">
-          <p className="text-xl sm:text-2xl md:text-3xl">30</p>
+          <p className="text-xl sm:text-2xl md:text-3xl">{day}</p>
           <div>
-            <p className="text-sm sm:text-base md:text-lg">Jun</p>
-            <p className="text-sm sm:text-base md:text-lg">2024</p>
+            <p className="text-sm sm:text-base md:text-lg">{month}</p>
+            <p className="text-sm sm:text-base md:text-lg">{year}</p>
           </div>
         </div>
 

@@ -11,9 +11,12 @@ import {
 import HotNews from "../HotNews/HotNews";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import { notFound } from "next/navigation";
 
 export default function UpperNavbar() {
   const [UpperNavbar, setUpperNavbar] = useState(null);
+
+
   /**
    * Event handler for the scroll event.
    * It sets the position of the Item based on the scroll position.

@@ -1,12 +1,48 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/pagination";
 import "./styles.css";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import { useEffect, useState } from "react";
+import { notFound } from "next/navigation";
+
+/**
+ * Truncates a given text to a maximum length and adds ellipsis if necessary.
+ */
+const truncateText = (text, maxLength) => {
+  // Check if the text is longer than the maximum length
+  if (text.length > maxLength) {
+    // Truncate the text and add ellipsis
+    return `${text.substring(0, maxLength)}...`;
+  }
+  // Return the original text if it is not longer than the maximum length
+  return text;
+};
 
 export default function HotNews() {
+  const [UpperNavbarSlider, setUpperNavbarSlider] = useState([]);
+
+  useEffect(() => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_UpperNavbar_2User;
+    const apiKey = process.env.NEXT_PUBLIC_API_UpperNavbar_1User;
+
+    const getData = async () => {
+      const res = await fetch(apiUrl || apiKey, {
+        cache: "no-cache",
+        next: { revalidate: 0 },
+      });
+
+      if (!res.ok) {
+        notFound();
+      }
+
+      const data = await res.json();
+      setUpperNavbarSlider(data.articles);
+    };
+
+    getData();
+  }, [UpperNavbarSlider]);
 
   return (
     <div className={`flex-grow pl-2 `}>
@@ -18,7 +54,7 @@ export default function HotNews() {
           </span>{" "}
         </p>
         <div className="flex ">
-          <div className="text-[#f7fafc] p-2 px-6 h-11 w-96 bg-[#222222] ml-2 rounded-lg">
+          <div className="text-[#f7fafc]   p-2 px-6 h-11 w-[500px] bg-[#222222] ml-2 rounded-lg">
             <Swiper
               modules={[Autoplay, Navigation]}
               autoplay={{
@@ -30,12 +66,18 @@ export default function HotNews() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-              className="h-10"
+              className="h-10 text-start"
             >
-              <SwiperSlide className="h-10">Slide 1</SwiperSlide>
-              <SwiperSlide className="h-10">Slide 2</SwiperSlide>
-              <SwiperSlide className="h-10">Slide 3</SwiperSlide>
-              <SwiperSlide className="h-10">Slide 4</SwiperSlide>
+              {UpperNavbarSlider.map((item, index) => {
+                return (
+                  <SwiperSlide
+                    key={index}
+                    className="h-10 flex justify-start items-start cursor-pointer"
+                  >
+                    {truncateText(item.title, 45)}
+                  </SwiperSlide>
+                );
+              })}
             </Swiper>
           </div>
 

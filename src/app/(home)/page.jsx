@@ -14,6 +14,7 @@ import VerticalCatagories from "../../components/Catagories/VerticalCatagories/V
 import SliderTrendingNews from "../../components/SliderTrendingNews/SliderTrendingNews";
 import Footer from "../../components/Footer/Footer";
 import { ToastContainer } from 'react-toastify';
+import EditorChoice from "components/SideBars/EditorChoice/EditorChoice";
 
 export default function Home() {
   return (
@@ -27,11 +28,12 @@ export default function Home() {
           <TopStories />
         </div>
 
-        <div className="flex-col w-1/3">
+        <div className="hidden md:block flex-col w-1/3">
           <PopularStories />
           <Weather />
           <Followus />
           <Tags />
+          <EditorChoice/>
           <Catagories />
         </div>
       </div>

@@ -169,6 +169,7 @@ form .btn .btn-layer {
   background: -webkit-linear-gradient(right, #cc0000, #e60000, #ff1a1a, #ff4d4d);
   border-radius: 15px;
   transition: all 0.4s ease;
+  z-index: 9999;
 }
 
 form .btn:hover .btn-layer {
@@ -178,7 +179,7 @@ form .btn:hover .btn-layer {
 form .btn input[type="submit"] {
   height: 100%;
   width: 100%;
-  z-index: 1;
+  z-index: 9999;
   position: relative;
   background: none;
   border: none;

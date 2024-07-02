@@ -32,103 +32,116 @@ export default function Signin({ setUser, User }) {
     <div
       className={` ${
         User ? "block" : "hidden"
-      } w-full h-full bg-black bg-opacity-80  fixed inset-0  `}
+      } w-full h-full bg-black bg-opacity-80  fixed inset-0 z-20  `}
     >
-      <div className="w-full h-full flex justify-center items-center">
-        <div ref={ref} className=" wrapper">
-          <div className="title-text">
-            <div
-              className="title"
-              style={{
-                transform:
-                  activeTab === "login" ? "translateX(0)" : "translateX(-100%)",
-              }}
-            >
-              Login Form
-            </div>
-            <div
-              className="title"
-              style={{
-                transform:
-                  activeTab === "login" ? "translateX(0)" : "translateX(-100%)",
-              }}
-            >
-              Signup Form
-            </div>
+      <div className="w-auto h-full flex justify-center items-center">
+        <div className="flex justify-center items-center" ref={ref}>
+          <div className="hidden md:block">
+            <img
+              src="https://www.gonewsindia.com/assets/uploads/Screen_Shot_2021-08-14_at_1.50.25_PM2.png"
+              alt=""
+              className="w-full h-full object-cover rounded-lg"
+            />
           </div>
-
-          <div className="form-container">
-            <div className="slide-controls">
-              <input
-                type="radio"
-                name="slide"
-                id="login"
-                checked={activeTab === "login"}
-                onChange={() => setActiveTab("login")}
-              />
-              <input
-                type="radio"
-                name="slide"
-                id="signup"
-                checked={activeTab === "signup"}
-                onChange={() => setActiveTab("signup")}
-              />
-              <label
-                htmlFor="login"
-                className={`slide login ${
-                  activeTab === "login" ? "active" : ""
-                }`}
+          <div className=" wrapper">
+            <div className="title-text">
+              <div
+                className="title"
+                style={{
+                  transform:
+                    activeTab === "login"
+                      ? "translateX(0)"
+                      : "translateX(-100%)",
+                }}
               >
-                Login
-              </label>
-              <label
-                htmlFor="signup"
-                className={`slide signup ${
-                  activeTab === "signup" ? "active" : ""
-                }`}
+                Login Form
+              </div>
+              <div
+                className="title"
+                style={{
+                  transform:
+                    activeTab === "login"
+                      ? "translateX(0)"
+                      : "translateX(-100%)",
+                }}
               >
-                Signup
-              </label>
-              <div className="slider-tab"></div>
+                Signup Form
+              </div>
             </div>
-            <div className="form-inner">
-              {activeTab === "login" ? (
-                <form className="login">
-                  <div className="field">
-                    <input type="text" placeholder="Email Address" required />
-                  </div>
-                  <div className="field">
-                    <input type="password" placeholder="Password" required />
-                  </div>
-                  <div className="pass-link">
-                    <a href="#">Forgot password?</a>
-                  </div>
-                  <div className="field btn">
-                    <div className="btn-layer"></div>
-                    <input type="submit" value="Login" />
-                  </div>
-                </form>
-              ) : (
-                <form className="signup">
-                  <div className="field">
-                    <input type="text" placeholder="Email Address" required />
-                  </div>
-                  <div className="field">
-                    <input type="password" placeholder="Password" required />
-                  </div>
-                  <div className="field">
-                    <input
-                      type="password"
-                      placeholder="Confirm Password"
-                      required
-                    />
-                  </div>
-                  <div className="field btn">
-                    <div className="btn-layer"></div>
-                    <input type="submit" value="Signup" />
-                  </div>
-                </form>
-              )}
+
+            <div className="form-container">
+              <div className="slide-controls">
+                <input
+                  type="radio"
+                  name="slide"
+                  id="login"
+                  checked={activeTab === "login"}
+                  onChange={() => setActiveTab("login")}
+                />
+                <input
+                  type="radio"
+                  name="slide"
+                  id="signup"
+                  checked={activeTab === "signup"}
+                  onChange={() => setActiveTab("signup")}
+                />
+                <label
+                  htmlFor="login"
+                  className={`slide login ${
+                    activeTab === "login" ? "active" : ""
+                  }`}
+                >
+                  Login
+                </label>
+                <label
+                  htmlFor="signup"
+                  className={`slide signup ${
+                    activeTab === "signup" ? "active" : ""
+                  }`}
+                >
+                  Signup
+                </label>
+                <div className="slider-tab"></div>
+              </div>
+              <div className="form-inner">
+                {activeTab === "login" ? (
+                  <form className="login">
+                    <div className="field">
+                      <input type="text" placeholder="Email Address" required />
+                    </div>
+                    <div className="field">
+                      <input type="password" placeholder="Password" required />
+                    </div>
+                    <div className="pass-link">
+                      <a href="#">Forgot password?</a>
+                    </div>
+                    <div className="field btn">
+                      <div className="btn-layer"></div>
+                      <input type="submit" value="Login" />
+                    </div>
+                  </form>
+                ) : (
+                  <form className="signup">
+                    <div className="field">
+                      <input type="text" placeholder="Email Address" required />
+                    </div>
+                    <div className="field">
+                      <input type="password" placeholder="Password" required />
+                    </div>
+                    <div className="field">
+                      <input
+                        type="password"
+                        placeholder="Confirm Password"
+                        required
+                      />
+                    </div>
+                    <div className="field btn">
+                      <div className="btn-layer"></div>
+                      <input type="submit" value="Signup" />
+                    </div>
+                  </form>
+                )}
+              </div>
             </div>
           </div>
         </div>

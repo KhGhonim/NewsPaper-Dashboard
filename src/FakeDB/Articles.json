@@ -1,0 +1,232 @@
+{
+  "status": "ok",
+  "totalResults": 68,
+  "articles": [
+    {
+      "source": {
+        "id": "fortune",
+        "name": "Fortune"
+      },
+      "author": "Christiaan Hetzner",
+      "title": "Elon Musk vows Bill Gates will be 'obliterated' if he doesn't stop shorting Tesla - Fortune",
+      "catagory": "Technology",
+      "description": "If the Optimus robot somehow catapults Tesla to Musk’s $30 trillion market cap target, bears like the Microsoft cofounder could be wiped out.",
+      "url": "https://fortune.com/2024/07/03/elon-musk-tesla-bill-gates-obliterate-short-sellers-ai-robots-autonomy/",
+      "urlToImage": "https://fortune.com/img-assets/wp-content/uploads/2024/07/GettyImages-2151277359-2-e1720010313836.jpg?resize=1200,600",
+      "publishedAt": "2024-07-03T16:42:39Z",
+      "content": "Elon Musk gave Bill Gates advance warning on Tuesday not to trifle with him again. The Microsoft cofounder faces annihilation if he makes any further attempt to bet against Tesla.Thats because Musk b… [+5607 chars]"
+    },
+    {
+      "source": {
+        "id": "the-washington-post",
+        "name": "The Washington Post"
+      },
+      "author": "Andrew Jeong, Taylor Telford",
+      "title": "Paramount and Skydance reach tentative merger deal - The Washington Post",
+
+      "catagory": "Technology",
+      "description": "Skydance Media, which co-produced Mission: Impossible films and “Top Gun: Maverick,” has agreed to a preliminary deal, a person familiar with the matter said.",
+      "url": "https://www.washingtonpost.com/business/2024/07/03/paramount-skydance-merger-deal/",
+      "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/OX2R7PX7T3MZLU3H7YLUOMIXNA_size-normalized.JPG&w=1440",
+      "publishedAt": "2024-07-03T16:23:03Z",
+      "content": "Skydance Media, which helped produce Top Gun: Maverick and Mission: Impossible franchise films, has reached a tentative deal that would give it a controlling stake in Paramount Global, according to a… [+3074 chars]"
+    },
+
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "MICHELLE CHAPMAN",
+      "title": "Southwest Air adopts 'poison pill' as activist investor Elliott takes significant stake in company - The Associated Press",
+      "catagory": "Politics",
+
+      "description": "Southwest Airlines has adopted a ‘poison pill’ following activist investor Elliott Investment Management taking a significant stake in the company. The airline said Wednesday that the shareholder rights plan is effective immediately and expires in a year. Sou…",
+      "url": "https://apnews.com/article/southwest-poison-pill-elliott-jordan-2ba470fedf48c56c22984b416bdb7592",
+      "urlToImage": "https://dims.apnews.com/dims4/default/f63535e/2147483647/strip/true/crop/4306x2422+0+224/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F86%2F6a%2F81ea4025b18c4d8ee89e965359c6%2F72a54b098a334ea185eaa7dbc683a086",
+      "publishedAt": "2024-07-03T15:44:00Z",
+      "content": "Southwest Airlines has adopted a poison pill following activist investor Elliott Investment Management taking a significant stake in the company. The airline said Wednesday that the shareholder righ… [+2533 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "OilPrice.com"
+      },
+      "author": "Irina Slav",
+      "title": "Oil Prices Rise As EIA Confirms Huge Crude Draw | OilPrice.com - OilPrice.com",
+      "catagory": "Business",
+
+      "description": "Oil prices rose on Wednesday morning after the EIA confirmed a very large draw in crude inventories",
+      "url": "https://oilprice.com/Energy/Crude-Oil/Oil-Prices-Rise-As-EIA-Confirms-Huge-Crude-Draw.html",
+      "urlToImage": "https://d32r1sh890xpii.cloudfront.net/article/718x300/2024-07-03_mnvnf1hqbb.jpg",
+      "publishedAt": "2024-07-03T14:37:58Z",
+      "content": "Despite controlling Iraqi Kurdistan's oil… The rebound in Brazil's crude… Just because efficiency gains boosted… By Irina Slav - Jul 03, 2024, 9:37 AM CDT Crude oil prices moved higher today afte… [+2151 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Financial Times"
+      },
+      "author": "Joshua Franklin, George Steer",
+      "title": "Kolanovic to leave JPMorgan after series of mistimed stock market calls - Financial Times",
+      "catagory": "Politics",
+
+      "description": "Top analyst leaves US bank after bearish forecasts on S&P 500",
+      "url": "https://www.ft.com/content/e7b4b034-b487-452b-b1f7-1c860454580a",
+      "urlToImage": "https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fwww.ft.com%2F__origami%2Fservice%2Fimage%2Fv2%2Fimages%2Fraw%2Fhttps%253A%252F%252Fd1e00ek4ebabms.cloudfront.net%252Fproduction%252F9682284a-c13f-4f9e-81dd-6ed87f3ca267.jpg%3Fsource%3Dnext-article%26fit%3Dscale-down%26quality%3Dhighest%26width%3D700%26dpr%3D1?source=next-opengraph&fit=scale-down&width=900",
+      "publishedAt": "2024-07-03T14:37:56Z",
+      "content": "Marko Kolanovic will leave his role as JPMorgans chief global markets strategist, ending a 19-year stint that culminated in a series of mistimed calls on the US stock market. Kolanovic, also the ban… [+2841 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "New York Post"
+      },
+      "author": "Reda Wigle",
+      "title": "FDA bans brominated vegetable oil use in food, soda - New York Post",
+      "catagory": "Health",
+
+      "description": "The Food and Drug Administration said Tuesday it is banning the use of BVO in food items effective Aug. 2.",
+      "url": "https://nypost.com/2024/07/03/lifestyle/fda-bans-brominated-vegetable-oil-use-in-food-soda/",
+      "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/07/agency-said-review-brominated-vegetable-84877682.jpg?quality=75&strip=all&w=1024",
+      "publishedAt": "2024-07-03T14:25:00Z",
+      "content": "The US Food and Drug Administration said Tuesday it is banning the use of brominated vegetable oil in food items effective Aug. 2. BVO, a vegetable oil modified with bromine, has been a food ingredi… [+2858 chars]"
+    },
+
+    {
+      "source": {
+        "id": null,
+        "name": "WABC-TV"
+      },
+      "author": "Eyewitness News",
+      "title": "Delta Airlines flight to Amsterdam diverts to JFK Airport after spoiled food is served - WABC-TV",
+      "catagory": "Technology",
+
+      "description": "Delta Airlines says a flight from Detroit to Amsterdam had to divert to JFK Airport early Wednesday morning because a portion of the in-flight meal service was spoiled.",
+      "url": "https://abc7ny.com/post/flight-diverted-delta-airlines-flight-amsterdam-lands-jfk/15023649/",
+      "urlToImage": "https://cdn.abcotvs.com/dip/images/5125890_020719-kgo-delta-napkin-img_Image_00-00-31,19.jpg?w=1600",
+      "publishedAt": "2024-07-03T13:41:15Z",
+      "content": "NEW YORK CITY (WABC) -- Delta Airlines says a flight from Detroit to Amsterdam had to divert to JFK Airport early Wednesday morning after passengers were served spoiled food.\r\nDelta Flight 136 was en… [+964 chars]"
+    },
+    {
+      "source": {
+        "id": "the-hill",
+        "name": "The Hill"
+      },
+      "author": "Elizabeth Crisp",
+      "title": "Fourth of July cookout costs hit record high: Survey - The Hill",
+      "catagory": "Politics",
+
+      "description": "Inflation concerns are hitting the holiday table, with average Fourth of July cookout costs expected to soar to their highest level ever, according to new research. This year’s American Farm Bureau Fourth of July market basket survey found that the average co…",
+      "url": "https://thehill.com/business/4753353-fourth-of-july-cookout-costs-hit-record-high-survey/mlite/",
+      "urlToImage": "https://thehill.com/wp-content/uploads/sites/2/2024/07/AP21240656315975-e1720013275401.jpg?w=1280",
+      "publishedAt": "2024-07-03T13:28:00Z",
+      "content": "Skip to content\r\nInflation concerns are hitting the holiday table, with average Fourth of July cookout costs expected to soar to their highest level ever, according to new research.\r\nThis year’s Amer… [+2534 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Sara Salinas",
+      "title": "Ford sales edge 1% higher in the second quarter, led by trucks - CNBC",
+      "catagory": "Technology",
+
+      "description": "Ford truck sales of 308,920 vehicles marked the company's best second-quarter performance for the vehicle category since 2019.",
+      "url": "https://www.cnbc.com/2024/07/03/ford-sales-q2-2024.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/107424849-1717623828516-gettyimages-2156250892-dsc02210copy_iqfmjmjj.jpeg?v=1720018434&w=1920&h=1080",
+      "publishedAt": "2024-07-03T13:18:41Z",
+      "content": "Ford sales rose 1% during the second quarter over the year-earlier period, led by a 5% gain in truck sales, the automaker said Wednesday.\r\nFord truck sales, which include pickups and vans, totaled 30… [+1229 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Ashley Killough, Ed Lavandera",
+      "title": "As it gets hotter, 13,000 families in this pocket of America live without electricity - CNN",
+      "catagory": "Health",
+
+      "description": "As global temperatures keep rising, the rush to fully electrify one of the poorest regions in the United States is more urgent than ever.",
+      "url": "https://www.cnn.com/2024/07/03/us/navajo-nation-power-grid-connection/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/katherine-benally-2.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2024-07-03T13:14:00Z",
+      "content": "Tohatchi, New MexicoCNN\r\n  — \r\nKatherine Benally sat between two open windows in her small home and looked out over a sun-baked field in the Chuska Mountain foothills of the vast Navajo Nation.\r\nAs s… [+9013 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "Morgan Smith",
+      "title": "Gen Zers and millennials are 'quiet vacationing' during 4th of July week instead of taking PTO - CNBC",
+      "catagory": "Politics",
+
+      "description": "Younger employees are “quiet vacationing” during the summer months to cope with constraints on PTO and increased feelings of burnout, according to new research.",
+      "url": "https://www.cnbc.com/2024/07/03/gen-zers-millennials-quiet-vacation-during-fourth-of-july-week.html",
+      "urlToImage": "https://image.cnbcfm.com/api/v1/image/108000935-1719936077484-gettyimages-1319366474-286.jpeg?v=1719936242&w=1920&h=1080",
+      "publishedAt": "2024-07-03T13:09:45Z",
+      "content": "A record 70.9 million people are expected to travel this week for the Fourth of July, AAA reports, marking the busiest Independence Day holiday ever but not everyone is asking their boss for time off… [+4025 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": null,
+      "title": "Gas prices rise as Americans hit the road for holiday weekend, with more increases expected - Yahoo Finance",
+      "catagory": "Business",
+
+      "description": null,
+      "url": "https://finance.yahoo.com/news/gas-prices-rise-as-americans-hit-the-road-for-holiday-weekend-with-more-increases-expected-125938194.html",
+      "urlToImage": null,
+      "publishedAt": "2024-07-03T12:59:38Z",
+      "content": "If you click 'Accept all', we and our partners, including 237 who are part of the IAB Transparency &amp; Consent Framework, will also store and/or access information on a device (in other words, use … [+678 chars]"
+    },
+    {
+      "source": {
+        "id": "google-news",
+        "name": "Google News"
+      },
+      "author": "CBS News",
+      "title": "FDA approves new Alzheimer's treatment, donanemab from Eli Lilly - CBS News",
+      "catagory": "Health",
+
+      "description": null,
+      "url": "https://news.google.com/rss/articles/CBMiV2h0dHBzOi8vd3d3LmNic25ld3MuY29tL25ld3MvZmRhLWFwcHJvdmVzLW5ldy1hbHpoZWltZXJzLXRyZWF0bWVudC1kb25hbmVtYWItZWxpLWxpbGx5L9IBW2h0dHBzOi8vd3d3LmNic25ld3MuY29tL2FtcC9uZXdzL2ZkYS1hcHByb3Zlcy1uZXctYWx6aGVpbWVycy10cmVhdG1lbnQtZG9uYW5lbWFiLWVsaS1saWxseS8?oc=5",
+      "urlToImage": null,
+      "publishedAt": "2024-07-03T12:57:00Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "Reuters",
+      "title": "Constellation Brands beats quarterly profit estimates on strong beer business - Yahoo Finance",
+      "catagory": "Business",
+
+      "description": "Corona beer maker Constellation Brands on Wednesday beat Wall Street estimates for first-quarter profit, helped by strong demand for its core beer brands...",
+      "url": "https://finance.yahoo.com/news/constellation-brands-beats-quarterly-profit-121251302.html",
+      "urlToImage": "https://media.zenfs.com/en/reuters-finance.com/680b7a510328626eb7540282726a03a6",
+      "publishedAt": "2024-07-03T12:24:59Z",
+      "content": "(Reuters) - Corona beer maker Constellation Brands on Wednesday beat Wall Street estimates for first-quarter profit, helped by strong demand for its core beer brands, which offset the sluggish wines … [+1216 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNET"
+      },
+      "author": null,
+      "title": "Save Big With Our 66 Best July 4th Sales With Up to 70% off Home, Tech, Appliances and More - CNET",
+      "catagory": "Technology",
+
+      "description": "Tons of different categories of items are on sale right now for the July 4th holiday. Here are our top deals across some of our favorite retailers.",
+      "url": "https://www.cnet.com/deals/best-july-4th-sales-2024-07-03/",
+      "urlToImage": "https://www.cnet.com/a/img/resize/8768ba9a9824b4fb5fb9170bf2ce8a841dccf12c/hub/2024/06/26/86e16dca-e9aa-4d81-aeb1-488a09e84f4c/promo-2.png?auto=webp&fit=crop&height=675&width=1200",
+      "publishedAt": "2024-07-03T12:16:11Z",
+      "content": "The Fourth of July is tomorrow and it's not just about fireworks and barbecues, but also some epic sales. You don't even have to wait until the fourth, because many of the top deals are already live … [+5705 chars]"
+    }
+  ]
+}

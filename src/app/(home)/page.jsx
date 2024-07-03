@@ -2,7 +2,7 @@ import HeroSectionSlider from "../../components/HeroSection/HeroSectionSlider";
 import Navbar from "../../components/Header/Navbar/Navbar";
 import LatestWorldNews from "../../components/News/WorldNews/LatestWorldNews";
 import BannerAD from "../../components/BannerAd/BannerAD";
-import TopStories from "../../components/News/TopStories/TopStories";
+import TopStories from "../../components/UserChoice/User/User";
 import PopularStories from "../../components/SideBars/PopularStories/PopularStories";
 import Weather from "../../components/SideBars/WeatherNews/Weather";
 import Followus from "../../components/SideBars/FollowUs/Followus";
@@ -23,7 +23,7 @@ export default function Home() {
       <HeroSectionSlider />
       <div className="flex ">
         <div className="flex-col w-2/3">
-          <LatestWorldNews />
+          <LatestWorldNews  />
           <BannerAD />
           <TopStories />
         </div>
@@ -40,14 +40,14 @@ export default function Home() {
       <FeaturedVideo />
 
       <div className="flex">
-        <div className=" w-1/2">
+        <div className=" w-1/2  px-5 max-sm:w-full">
           <BestInCatagories />
         </div>
-        <div className=" w-1/2">
+        <div className=" w-1/2 max-sm:hidden">
           <VerticalCatagories />
         </div>
       </div>
-      <SliderTrendingNews />
+      <SliderTrendingNews  />
       <BannerAD />
       <Footer />
 

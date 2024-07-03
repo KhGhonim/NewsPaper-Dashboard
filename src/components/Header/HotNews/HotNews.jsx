@@ -26,9 +26,10 @@ export default function HotNews() {
   useEffect(() => {
     const apiUrl = process.env.NEXT_PUBLIC_API_UpperNavbar_2User;
     const apiKey = process.env.NEXT_PUBLIC_API_UpperNavbar_1User;
+    const localhost= "http://localhost:4000/articles"
 
     const getData = async () => {
-      const res = await fetch(apiUrl || apiKey, {
+      const res = await fetch(localhost || apiUrl || apiKey, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -38,7 +39,7 @@ export default function HotNews() {
       }
 
       const data = await res.json();
-      setUpperNavbarSlider(data.articles);
+      setUpperNavbarSlider(data.articles || data);
     };
 
     getData();

@@ -6,16 +6,14 @@ import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function PopularStories() {
-  const [Tab, setTab] = useState("politics");
+  const [Tab, setTab] = useState("Politics");
   const [PopularNewData, setWorldNewData] = useState([]);
 
-
   useEffect(() => {
-    let url1 = `https://newsapi.org/v2/top-headlines?country=us&category=${Tab}&apiKey=5cad7080742e46b8ad30a69d90f62983`;
-    let url2 = `https://newsapi.org/v2/top-headlines?country=us&category=${Tab}&apiKey=0118ed45961b491fa5ec6aa3b9080efe`;
+    const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
-      const res = await fetch(url2 || url1, {
+      const res = await fetch(localhost, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -23,9 +21,14 @@ export default function PopularStories() {
       if (!res.ok) {
         notFound();
       }
-
       const data = await res.json();
-      setWorldNewData(data.articles);
+
+      const fillteredData = data.filter((item) => {
+        return item.catagory === Tab;
+      });
+
+
+      setWorldNewData(fillteredData);
     };
 
     getData();
@@ -65,10 +68,10 @@ export default function PopularStories() {
           <li>
             <button
               onClick={() => {
-                HandleTabs("politics");
+                HandleTabs("Politics");
               }}
               className={`${
-                Tab === "politics"
+                Tab === "Politics"
                   ? " border bg-red-500 text-white px-9 w-full py-3 rounded-xl"
                   : "tab-link border bg-gray-900 text-white px-9 py-3 rounded-xl"
               }`}
@@ -79,10 +82,10 @@ export default function PopularStories() {
           <li>
             <button
               onClick={() => {
-                HandleTabs("science");
+                HandleTabs("Business");
               }}
               className={`${
-                Tab === "science"
+                Tab === "Business"
                   ? " border bg-red-500 text-white px-9 py-3 rounded-xl"
                   : "tab-link border bg-gray-900 text-white px-9 py-3 rounded-xl"
               }`}
@@ -110,7 +113,9 @@ export default function PopularStories() {
                   className="rounded-lg w-1/4 object-cover"
                 />
                 <div className="ml-4">
-                  <h2 className="text-lg font-bold hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">{item.title}</h2>
+                  <h2 className="text-lg font-bold hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">
+                    {item.title}
+                  </h2>
                   <p className="text-muted-foreground">
                     {month} {day}, {year}
                   </p>

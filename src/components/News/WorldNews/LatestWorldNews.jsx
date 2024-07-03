@@ -4,16 +4,15 @@ import moment from "moment";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function LatestWorldNews() {
-  const [Tab, setTab] = useState("politics");
+export default function LatestWorldNews({}) {
+  const [Tab, setTab] = useState("Politics");
   const [WorldNewData, setWorldNewData] = useState([]);
 
   useEffect(() => {
-    let url1 = `https://newsapi.org/v2/top-headlines?country=us&category=${Tab}&apiKey=5cad7080742e46b8ad30a69d90f62983`;
-    let url2 = `https://newsapi.org/v2/top-headlines?country=us&category=${Tab}&apiKey=0118ed45961b491fa5ec6aa3b9080efe`;
+    const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
-      const res = await fetch(url2 || url1, {
+      const res = await fetch(localhost, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -23,7 +22,12 @@ export default function LatestWorldNews() {
       }
 
       const data = await res.json();
-      setWorldNewData(data.articles);
+
+      const fillteredData = data.filter((item) => {
+        return item.catagory === Tab;
+      });
+
+      setWorldNewData(fillteredData);
     };
 
     getData();
@@ -32,7 +36,7 @@ export default function LatestWorldNews() {
     setTab(value);
   };
 
-  if (!WorldNewData && WorldNewData.length > 0) {
+  if (!WorldNewData && WorldNewData.length < 0) {
     return (
       <div className="py-4 rounded shadow-md w-full h-[600px] max-sm:h-[400px] animate-pulse bg-gray-50">
         <div className="flex p-4 space-x-4 sm:px-8">
@@ -68,10 +72,10 @@ export default function LatestWorldNews() {
             <li>
               <button
                 onClick={() => {
-                  HandleTabs("politics");
+                  HandleTabs("Politics");
                 }}
                 className={`${
-                  Tab === "politics"
+                  Tab === "Politics"
                     ? " border bg-red-500 text-white px-4 py-2"
                     : "tab-link border bg-gray-300 px-4 py-2"
                 }`}
@@ -82,10 +86,10 @@ export default function LatestWorldNews() {
             <li>
               <button
                 onClick={() => {
-                  HandleTabs("technology");
+                  HandleTabs("Technology");
                 }}
                 className={`${
-                  Tab === "technology"
+                  Tab === "Technology"
                     ? " border bg-red-500 text-white px-4 py-2"
                     : "tab-link border bg-gray-300 px-4 py-2"
                 }`}
@@ -96,10 +100,10 @@ export default function LatestWorldNews() {
             <li>
               <button
                 onClick={() => {
-                  HandleTabs("business");
+                  HandleTabs("Business");
                 }}
                 className={`${
-                  Tab === "business"
+                  Tab === "Business"
                     ? " border bg-red-500 text-white px-4 py-2"
                     : "tab-link border bg-gray-300 px-4 py-2"
                 }`}
@@ -110,10 +114,10 @@ export default function LatestWorldNews() {
             <li>
               <button
                 onClick={() => {
-                  HandleTabs("sports");
+                  HandleTabs("Health");
                 }}
                 className={`${
-                  Tab === "sports"
+                  Tab === "Health"
                     ? " border bg-red-500 text-white px-4 py-2"
                     : "tab-link border bg-gray-300 px-4 py-2"
                 }`}
@@ -135,7 +139,10 @@ export default function LatestWorldNews() {
                 return null;
               }
               return (
-                <div key={index} className="flex mb-4 md:items-center border-t border-b">
+                <div
+                  key={index}
+                  className="flex mb-4 md:items-center border-t border-b"
+                >
                   <img
                     src={item.urlToImage}
                     alt="News Image"
@@ -145,20 +152,19 @@ export default function LatestWorldNews() {
                     <span className="bg-red-500 text-white font-bold px-2 py-1 rounded hover:bg-gray-900 hover:text-white transition-all duration-200 ease-out cursor-pointer">
                       {item.source.name}
                     </span>
-                    <h2 className="text-xl font-bold hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">{item.title}</h2>
+                    <h2 className="text-xl font-bold hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">
+                      {item.title}
+                    </h2>
                     <p className="text-muted-foreground">
                       {month} {day}, {year}
                     </p>
 
                     <p className="text-muted-foreground">By {item.author}</p>
                   </div>
-                  
                 </div>
               );
             })}
-            
           </div>
-          
         </div>
       </div>
     </div>

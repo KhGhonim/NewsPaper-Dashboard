@@ -19,9 +19,10 @@ export default function HeroSectionSlider() {
       process.env.NEXT_PUBLIC_API_URL_HeroSection_EditorChoice_User;
     const apiKey =
       process.env.NEXT_PUBLIC_API_URL_HeroSection_EditorChoice_2User;
+    const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
-      const res = await fetch(apiUrl || apiKey, {
+      const res = await fetch(localhost || apiUrl || apiKey, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -31,7 +32,7 @@ export default function HeroSectionSlider() {
       }
 
       const data = await res.json();
-      setstate(data.articles);
+      setstate(data.articles || data);
     };
 
     getData();
@@ -42,7 +43,7 @@ export default function HeroSectionSlider() {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
   };
 
-  if (!arrData && arrData.length > 0) {
+  if (!arrData && arrData.length < 0) {
     return (
       <div className="py-4 rounded shadow-md w-screen h-[600px] max-sm:h-[400px] animate-pulse bg-gray-50">
         <div className="flex p-4 space-x-4 sm:px-8">

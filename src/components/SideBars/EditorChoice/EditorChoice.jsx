@@ -12,14 +12,10 @@ export default function EditorChoice() {
   const [EditorChoice, setEditorChoice] = useState([]);
 
   useEffect(() => {
-    const apiUrl =
-      process.env.NEXT_PUBLIC_API_URL_HeroSection_EditorChoice_User;
-    const apiKey =
-      process.env.NEXT_PUBLIC_API_URL_HeroSection_EditorChoice_2User;
-
+    const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
-      const res = await fetch(apiUrl || apiKey, {
+      const res = await fetch(localhost, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -29,7 +25,7 @@ export default function EditorChoice() {
       }
 
       const data = await res.json();
-      setEditorChoice(data.articles);
+      setEditorChoice(data);
     };
 
     getData();
@@ -45,14 +41,15 @@ export default function EditorChoice() {
       >
         {EditorChoice.map((item, index) => {
           if (item.urlToImage === null) {
-            return null
+            return null;
           }
           return (
-            <SwiperSlide key={index} className="relative cursor-pointer overflow-hidden">
+            <SwiperSlide
+              key={index}
+              className="relative cursor-pointer overflow-hidden"
+            >
               <img
-                src={
-                  item.urlToImage 
-                }
+                src={item.urlToImage}
                 alt="Skateboarder performing a trick"
                 className="w-full h-96 object-cover rounded-3xl px-2 hover:scale-105 transition-all duration-700 ease-out"
               />
@@ -68,7 +65,7 @@ export default function EditorChoice() {
                 </div>
                 <div className="mt-2 ">
                   <h3 className="text-white text-lg font-semibold mt-2 hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">
-                  {item.title}
+                    {item.title}
                   </h3>
                   <div className="flex items-center text-white text-xs mt-2 space-x-2">
                     <span>

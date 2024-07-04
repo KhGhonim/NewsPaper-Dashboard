@@ -15,14 +15,11 @@ export default function HeroSectionSlider() {
   const [arrData, setstate] = useState([]);
 
   useEffect(() => {
-    const apiUrl =
-      process.env.NEXT_PUBLIC_API_URL_HeroSection_EditorChoice_User;
-    const apiKey =
-      process.env.NEXT_PUBLIC_API_URL_HeroSection_EditorChoice_2User;
+
     const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
-      const res = await fetch(localhost || apiUrl || apiKey, {
+      const res = await fetch(localhost, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });

@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import "./style.css";
+import SingUp from "./SignUp/SingUp";
+import SingIn from "./SignIn/SingIn";
 export default function Signin({ setUser, User }) {
   const [activeTab, setActiveTab] = useState("login");
 
@@ -104,43 +106,7 @@ export default function Signin({ setUser, User }) {
                 <div className="slider-tab"></div>
               </div>
               <div className="form-inner">
-                {activeTab === "login" ? (
-                  <form className="login">
-                    <div className="field">
-                      <input type="text" placeholder="Email Address" required />
-                    </div>
-                    <div className="field">
-                      <input type="password" placeholder="Password" required />
-                    </div>
-                    <div className="pass-link">
-                      <a href="#">Forgot password?</a>
-                    </div>
-                    <div className="field btn">
-                      <div className="btn-layer"></div>
-                      <input type="submit" value="Login" />
-                    </div>
-                  </form>
-                ) : (
-                  <form className="signup">
-                    <div className="field">
-                      <input type="text" placeholder="Email Address" required />
-                    </div>
-                    <div className="field">
-                      <input type="password" placeholder="Password" required />
-                    </div>
-                    <div className="field">
-                      <input
-                        type="password"
-                        placeholder="Confirm Password"
-                        required
-                      />
-                    </div>
-                    <div className="field btn">
-                      <div className="btn-layer"></div>
-                      <input type="submit" value="Signup" />
-                    </div>
-                  </form>
-                )}
+                {activeTab === "login" ? <SingIn /> : <SingUp />}
               </div>
             </div>
           </div>

@@ -227,6 +227,102 @@
       "urlToImage": "https://www.cnet.com/a/img/resize/8768ba9a9824b4fb5fb9170bf2ce8a841dccf12c/hub/2024/06/26/86e16dca-e9aa-4d81-aeb1-488a09e84f4c/promo-2.png?auto=webp&fit=crop&height=675&width=1200",
       "publishedAt": "2024-07-03T12:16:11Z",
       "content": "The Fourth of July is tomorrow and it's not just about fireworks and barbecues, but also some epic sales. You don't even have to wait until the fourth, because many of the top deals are already live … [+5705 chars]"
+    },
+
+    {
+      "source": {
+        "id": null,
+        "name": "WABC-TV"
+      },
+      "author": "Eyewitness News",
+      "title": "Delta Airlines flight to Amsterdam diverts to JFK Airport after spoiled food is served - WABC-TV",
+      "category": "Technology",
+      "Youtube": "true",
+
+      "description": "Delta Airlines says a flight from Detroit to Amsterdam had to divert to JFK Airport early Wednesday morning because a portion of the in-flight meal service was spoiled.",
+      "url": "https://abc7ny.com/post/flight-diverted-delta-airlines-flight-amsterdam-lands-jfk/15023649/",
+      "urlToImage": "https://www.youtube.com/watch?v=3JZ_D3ELwOQ",
+      "publishedAt": "2024-07-03T13:41:15Z",
+      "content": "NEW YORK CITY (WABC) -- Delta Airlines says a flight from Detroit to Amsterdam had to divert to JFK Airport early Wednesday morning after passengers were served spoiled food.\r\nDelta Flight 136 was en… [+964 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "BBC"
+      },
+      "author": "BBC News",
+      "title": "Political Analysis: Election 2024",
+      "category": "Politics",
+      "description": "An in-depth analysis of the upcoming 2024 elections.",
+      "url": "https://www.bbc.com/news/politics/15023649/",
+      "Youtube": "true",
+
+      "urlToImage": "https://www.youtube.com/watch?v=4Zp4dMcZmHc",
+      "publishedAt": "2024-07-02T10:15:30Z",
+      "content": "BBC News provides an in-depth analysis of the upcoming 2024 elections, discussing the key candidates and issues at stake.… [+1024 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "ESPN"
+      },
+      "author": "ESPN Sports",
+      "title": "Top 10 Goals of the Season",
+      "category": "Sport",
+      "Youtube": "true",
+
+      "description": "A compilation of the top 10 goals scored in the 2024 season.",
+      "url": "https://www.espn.com/soccer/top10goals",
+      "urlToImage": "https://www.youtube.com/watch?v=3yL71VQxe0Y",
+      "publishedAt": "2024-07-01T08:30:00Z",
+      "content": "ESPN Sports presents a compilation of the top 10 goals scored in the 2024 season across various leagues.… [+875 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Healthline"
+      },
+      "author": "Healthline Editors",
+      "title": "Benefits of a Balanced Diet",
+      "category": "Health",
+      "Youtube": "true",
+
+      "description": "Exploring the numerous benefits of maintaining a balanced diet.",
+      "url": "https://www.healthline.com/nutrition/balanced-diet",
+      "urlToImage": "https://www.youtube.com/watch?v=Z1QmeEdFOSc",
+      "publishedAt": "2024-06-30T15:45:20Z",
+      "content": "Healthline discusses the numerous benefits of maintaining a balanced diet, including improved energy levels and overall health.… [+890 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "CNBC"
+      },
+      "author": "CNBC Business",
+      "title": "Stock Market Update",
+      "category": "Business",
+      "Youtube": "true",
+      "description": "Latest updates and trends in the stock market for 2024.",
+      "url": "https://www.cnbc.com/stock-market-update",
+      "urlToImage": "https://www.youtube.com/watch?v=7Oe5T6Af95s",
+      "publishedAt": "2024-06-29T12:00:00Z",
+      "content": "CNBC provides the latest updates and trends in the stock market for 2024, analyzing market movements and projections.… [+1034 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "TechCrunch"
+      },
+      "author": "TechCrunch Editors",
+      "title": "Top 5 Gadgets of 2024",
+      "category": "Technology",
+      "Youtube": "true",
+
+      "description": "A review of the top 5 gadgets released in 2024.",
+      "url": "https://techcrunch.com/top5gadgets2024",
+      "urlToImage": "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
+      "publishedAt": "2024-06-28T09:20:10Z",
+      "content": "TechCrunch reviews the top 5 gadgets released in 2024, highlighting their features and performance.… [+950 chars]"
     }
   ]
 }

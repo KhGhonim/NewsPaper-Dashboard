@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 export default function Slider() {
   const [UserSlider, setUserSlider] = useState([]);
@@ -35,9 +34,7 @@ export default function Slider() {
   return (
     <Swiper
       spaceBetween={1}
-      pagination={{
-        clickable: true,
-      }}
+    
       navigation={{
         nextEl: ".button-next",
         prevEl: ".button-prev",
@@ -67,12 +64,12 @@ export default function Slider() {
         const month = moment(item.publishedAt).format("MMMM");
         const year = moment(item.publishedAt).year();
         return (
-          <SwiperSlide key={index} className="relative w-1/3 ">
-            <div className="group relative w-full h-full overflow-hidden">
+          <SwiperSlide key={index} className="relative w-1/3 cursor-pointer ">
+            <div className="group relative w-full h-full overflow-hidden ">
               <img
                 src={item.urlToImage}
                 alt="User image"
-                className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110"
+                className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110 "
               />
               <div className="absolute bottom-0 left-0 p-4 bg-gradient-to-t from-black to-transparent text-white">
                 <div className="flex items-center mb-2">

@@ -1,11 +1,10 @@
-import React from "react";
 import Slider from "./Slider";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 export default function SliderTrendingNews() {
   return (
-    <div className=" md:flex max-sm:flex-col w-full bg-black text-white  my-8 h-[500px]">
-      <div className="w-1/4  max-sm:w-full text-center  p-8 flex justify-center flex-col relative">
+    <div className=" flex max-sm:flex-col w-screen bg-black text-white  h-[500px] mt-2">
+      <div className="w-1/4  max-sm:w-full text-center  p-8 flex justify-center flex-col relative bg-gradient-to-t from-black to-transparent">
         <div className="w-16 h-1 bg-red-500 mb-4"></div>
         <h2 className="text-xl font-bold mb-4">Trending News</h2>
         <p className="mb-4 text-sm">

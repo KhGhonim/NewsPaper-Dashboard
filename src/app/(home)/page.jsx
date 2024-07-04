@@ -9,8 +9,6 @@ import Followus from "../../components/SideBars/FollowUs/Followus";
 import Tags from "../../components/SideBars/Tags/Tags";
 import Catagories from "../../components/SideBars/Catagories/Catagories";
 import FeaturedVideo from "../../components/FeaturedVideo/FeaturedVideo";
-import BestInCatagories from "../../components/Catagories/BestInCatagories/BestInCatagories";
-import VerticalCatagories from "../../components/Catagories/VerticalCatagories/VerticalCatagories";
 import SliderTrendingNews from "../../components/SliderTrendingNews/SliderTrendingNews";
 import Footer from "../../components/Footer/Footer";
 import { ToastContainer } from 'react-toastify';
@@ -37,18 +35,17 @@ export default function Home() {
           <Catagories />
         </div>
       </div>
-      <FeaturedVideo />
+      {/* <FeaturedVideo /> */}
 
-      <div className="flex">
+      {/* <div className="flex">
         <div className=" w-1/2  px-5 max-sm:w-full">
           <BestInCatagories />
         </div>
         <div className=" w-1/2 max-sm:hidden">
-          <VerticalCatagories />
+          <VerticalCatagories  />
         </div>
-      </div>
+      </div> */}
       <SliderTrendingNews  />
-      <BannerAD />
       <Footer />
 
       <ToastContainer />

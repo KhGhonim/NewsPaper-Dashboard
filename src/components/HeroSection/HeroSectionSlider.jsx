@@ -15,7 +15,6 @@ export default function HeroSectionSlider() {
   const [arrData, setstate] = useState([]);
 
   useEffect(() => {
-
     const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
@@ -39,6 +38,8 @@ export default function HeroSectionSlider() {
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
   };
+
+  const filterData = arrData?.filter((item) => item?.Youtube !== "true");
 
   if (!arrData && arrData.length < 0) {
     return (
@@ -82,7 +83,11 @@ export default function HeroSectionSlider() {
         className="mySwiper"
       >
         {/* {News Array} */}
-        {arrData.map((item, index) => {
+        {filterData.map((item, index) => {
+          // @ts-ignore
+          if (arrData.urlToImage === null) {
+            return null;
+          }
           let day = moment(item.publishedAt).date();
           let month = moment(item.publishedAt).format("MMMM");
           let year = moment(item.publishedAt).year();

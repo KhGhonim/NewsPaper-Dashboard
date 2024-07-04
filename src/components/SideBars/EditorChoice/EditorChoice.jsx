@@ -46,12 +46,12 @@ export default function EditorChoice() {
           return (
             <SwiperSlide
               key={index}
-              className="relative cursor-pointer overflow-hidden"
+              className="group relative cursor-pointer rounded-3xl overflow-hidden"
             >
               <img
                 src={item.urlToImage}
                 alt="Skateboarder performing a trick"
-                className="w-full h-96 object-cover rounded-3xl px-2 hover:scale-105 transition-all duration-700 ease-out"
+                className="w-full h-96 object-cover transform transition-all duration-700 group-hover:scale-110"
               />
 
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4 rounded-3xl rounded-b-lg ">

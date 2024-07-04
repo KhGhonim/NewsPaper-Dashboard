@@ -129,7 +129,7 @@ export default function LatestWorldNews({}) {
         </div>
         <div className="h-1 w-20 bg-red-500 mb-4"></div>
 
-        <div id="left-tab-content border ">
+        <div id="left-tab-content border border-b-4">
           <div className="tab-content ">
             {WorldNewData.map((item, index) => {
               const day = moment(item.publishedAt).date();

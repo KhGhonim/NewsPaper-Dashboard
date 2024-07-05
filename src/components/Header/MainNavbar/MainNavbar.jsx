@@ -16,13 +16,31 @@ import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
 export default function MainNavbar() {
+  const { data: session, status } = useSession();
   const [activeIndex, setActiveIndex] = useState(null);
   const [Cart, setCart] = useState(false);
   const [User, setUser] = useState(false);
   const [Menu, setMenu] = useState("hidden");
   const [Search, setSearch] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const { data: session, status } = useSession();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsHidden(false);
+      } else {
+        setIsHidden(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHidden]);
+
+
+
+
 
   const SignUpModelCloser = (params) => {
     setMenu("hidden");
@@ -60,19 +78,7 @@ export default function MainNavbar() {
     setMenu((prevMenu) => (prevMenu === "hidden" ? "block" : "hidden"));
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsHidden(false);
-      } else {
-        setIsHidden(true);
-      }
-    };
 
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHidden]);
 
   return (
     <div className="relative">

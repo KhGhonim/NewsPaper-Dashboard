@@ -4,6 +4,7 @@ import Navbar from "../components/Header/Navbar/Navbar";
 import AuthProvider from "./Providers/AuthProvider";
 import Footer from "../components/Footer/Footer";
 import BannerAD from "../components/BannerAd/BannerAD";
+import FloatingCatagories from "../components/SideBars/FloatingCatagories/FloatingCatagories";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <Navbar />
+          <FloatingCatagories />
           {children}
           <BannerAD />
           <Footer />

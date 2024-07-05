@@ -55,7 +55,7 @@ export default function HotNews() {
           </span>{" "}
         </p>
         <div className="flex ">
-          <div className="text-[#f7fafc]   p-2 px-6 h-11 w-[500px] bg-[#222222] ml-2 rounded-lg">
+          <div className="text-[#f7fafc]  text-2xl  p-2 px-6 h-11 w-[500px] bg-[#222222] ml-2 rounded-lg">
             <Swiper
               modules={[Autoplay, Navigation]}
               autoplay={{
@@ -67,13 +67,13 @@ export default function HotNews() {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
               }}
-              className="h-10 text-start"
+              className="h-10 text-start "
             >
               {UpperNavbarSlider.map((item, index) => {
                 return (
                   <SwiperSlide
                     key={index}
-                    className="h-10 flex justify-start items-start cursor-pointer"
+                    className="h-10 flex justify-start items-start text-2xl cursor-pointer"
                   >
                     {truncateText(item.title, 45)}
                   </SwiperSlide>

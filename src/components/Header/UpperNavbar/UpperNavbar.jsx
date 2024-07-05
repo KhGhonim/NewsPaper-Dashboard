@@ -11,44 +11,34 @@ import {
 import HotNews from "../HotNews/HotNews";
 import { useEffect, useState } from "react";
 import moment from "moment";
-import { notFound } from "next/navigation";
 
 export default function UpperNavbar() {
-  const [UpperNavbar, setUpperNavbar] = useState(null);
+  const [isHidden, setIsHidden] = useState(false);
 
-
-  /**
-   * Event handler for the scroll event.
-   * It sets the position of the Item based on the scroll position.
-   */
   useEffect(() => {
-    // Event handler for the scroll event
     const handleScroll = () => {
-      // Get the current scroll position
-      const scrollPosition = window.scrollY;
-
-      // If the scroll position is greater than 70, set the item position to "". Otherwise, set it to "".
-      if (scrollPosition > 70) {
-        setUpperNavbar("sticky"); // Set the Item position to ""
+      if (window.scrollY > 100) {
+        setIsHidden(true);
       } else {
-        setUpperNavbar("block"); // Set the Item position to ""
+        setIsHidden(false);
       }
     };
 
-    // Attach the event listener when the component mounts
     window.addEventListener("scroll", handleScroll);
 
-    // Remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll); // Remove the event listener
-    };
-  }, [UpperNavbar]);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isHidden]);
 
   const day = moment().date();
   const month = moment().format("MMMM");
   const year = moment().year();
   return (
-    <div className={`${UpperNavbar}  w-screen flex bg-[#292929] h-16`}>
+    <div
+      className={`flex w-full px-4 py-2  justify-between items-center bg-gray-800 text-white transition duration-300 ease-in-out ${
+        isHidden ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      {" "}
       <div
         className={` container flex items-center w-full px-4 md:px-10 lg:px-20`}
       >

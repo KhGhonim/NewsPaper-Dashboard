@@ -58,7 +58,7 @@ export default function SingUp() {
         <input
           onChange={(eo) => {
             let value = eo.target.value;
-            setemail(value);
+            setemail(value.toLowerCase());
           }}
           type="email"
           placeholder="Email Address"
@@ -69,7 +69,7 @@ export default function SingUp() {
         <input
           onChange={(eo) => {
             let value = eo.target.value;
-            setpassword(value);
+            setpassword(value.toLowerCase());
           }}
           type="password"
           placeholder="Password"
@@ -80,7 +80,7 @@ export default function SingUp() {
         <input
           onChange={(eo) => {
             let value = eo.target.value;
-            setConfirmPW(value);
+            setConfirmPW(value.toLowerCase());
           }}
           type="password"
           placeholder="Confirm Password"

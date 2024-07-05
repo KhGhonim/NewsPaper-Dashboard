@@ -1,5 +1,6 @@
 "use client";
 
+import Loading from "app/loading";
 import moment from "moment";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -7,11 +8,12 @@ import { useEffect, useState } from "react";
 export default function LatestWorldNews({}) {
   const [Tab, setTab] = useState("Politics");
   const [WorldNewData, setWorldNewData] = useState([]);
-
+  const [loading, setloading] = useState(true);
   useEffect(() => {
     const localhost = "http://localhost:4000/articles";
 
     const getData = async () => {
+      setloading(true);
       const res = await fetch(localhost, {
         cache: "no-cache",
         next: { revalidate: 0 },
@@ -31,33 +33,15 @@ export default function LatestWorldNews({}) {
     };
 
     getData();
+
+    setloading(false);
   }, [Tab]);
   const HandleTabs = (value) => {
     setTab(value);
   };
 
-  if (!WorldNewData && WorldNewData.length < 0) {
-    return (
-      <div className="py-4 rounded shadow-md w-full h-[600px] max-sm:h-[400px] animate-pulse bg-gray-50">
-        <div className="flex p-4 space-x-4 sm:px-8">
-          <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gray-300"></div>
-          <div className="flex-1 py-2 space-y-4">
-            <div className="w-full h-3 rounded bg-gray-300"></div>
-            <div className="w-5/6 h-3 rounded bg-gray-300"></div>
-          </div>
-        </div>
-        <div className="p-4 space-y-4 sm:px-8">
-          <div className="w-full h-4 rounded bg-gray-300"></div>
-          <div className="w-full h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-        </div>
-      </div>
-    );
+  if (loading) {
+    return <Loading />;
   }
 
   return (

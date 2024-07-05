@@ -91,7 +91,7 @@ export default function MainNavbar() {
           className={` relative container flex justify-between items-center   h-20 `}
         >
           {/* Logo */}
-          <div className=" w-max  flex justify-center items-center ">
+          <Link className=" w-max  flex justify-center items-center " href={"/"}>
             <Image
               src="/logo/KG.png"
               width={100}
@@ -103,7 +103,7 @@ export default function MainNavbar() {
             <h1 className="self-center text-2xl max-md:text-sm font-semibold text-black">
               KGNEWS
             </h1>
-          </div>
+          </Link>
 
           <div className="hidden md:flex md:flex-grow "></div>
 

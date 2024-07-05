@@ -57,9 +57,12 @@ export default function FloatingCatagories() {
             <div className="absolute right-full top-0  pr-4 z-10 opacity-100">
               <div className="p-2">
                 {/* Ensure submenu remains visible as long as either is being hovered */}
-                <ul className="w-40 bg-red-600 text-white p-1 rounded shadow-lg">
-                  <li className="cursor-pointer">{item.submenu}</li>
-                </ul>
+                <Link
+                  href={item.href}
+                  className="flex items-center w-32 justify-center bg-red-600 text-white p-2 rounded shadow-lg cursor-pointer"
+                >
+                  <span>{item.submenu}</span>
+                </Link>
               </div>
             </div>
           )}

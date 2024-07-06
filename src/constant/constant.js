@@ -44,12 +44,12 @@ export const CATEGORY_IMAGES = [
 ];
 
 export const CATEGORIES = [
-  { name: "BUSINESS", link: "https://example.com/business" },
-  { name: "POLITICS", link: "https://example.com/politics" },
-  { name: "HEALTH", link: "https://example.com/health" },
-  { name: "SCIENCE", link: "https://example.com/science" },
-  { name: "SPORTS", link: "https://example.com/sports" },
-  { name: "TECHNOLOGY", link: "https://example.com/technology" },
+  { name: "BUSINESS", link: "/business" },
+  { name: "POLITICS", link: "/politics" },
+  { name: "HEALTH", link: "/health" },
+  { name: "SCIENCE", link: "/science" },
+  { name: "SPORTS", link: "/sports" },
+  { name: "TECHNOLOGY", link: "/technology" },
 ];
 
 export const FloatingCatagoriesitems = [

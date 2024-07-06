@@ -34,7 +34,7 @@ export default function Signin({ setUser, User }) {
     <div
       className={` ${
         User ? "block" : "hidden"
-      } w-full h-full bg-black bg-opacity-80  fixed inset-0 z-20  `}
+      } bg-black bg-opacity-80  fixed inset-0 z-50  `}
     >
       <div className="w-auto h-full flex justify-center items-center">
         <div className="flex justify-center items-center" ref={ref}>

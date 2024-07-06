@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import {
   FaFacebook,
@@ -9,33 +8,16 @@ import {
 } from "react-icons/fa";
 
 import HotNews from "../HotNews/HotNews";
-import { useEffect, useState } from "react";
 import moment from "moment";
 
-export default function UpperNavbar() {
-  const [isHidden, setIsHidden] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsHidden(true);
-      } else {
-        setIsHidden(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHidden]);
-
+export default function UpperNavbar({ isUpperNavbarVisible }) {
   const day = moment().date();
   const month = moment().format("MMMM");
   const year = moment().year();
   return (
     <div
       className={`flex w-full px-4 py-2  justify-between items-center bg-gray-800 text-white transition duration-300 ease-in-out ${
-        isHidden ? "opacity-0" : "opacity-100"
+        isUpperNavbarVisible ? "opacity-100" : "opacity-0"
       }`}
     >
       {" "}

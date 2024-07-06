@@ -1,6 +1,6 @@
 "use client";
 
-import Loading from "app/loading";
+import Loading from "app/Loading";
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -46,7 +46,7 @@ export default function PopularStories() {
 
   return (
     <div className="block w-full  p-4 border-b-2">
-      <div className="border-b border-muted my-4">
+      <div className=" my-4">
         <ul className="flex justify-center ">
           <li>
             <button

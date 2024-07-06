@@ -1,6 +1,6 @@
 "use client";
 
-import Loading from "app/loading";
+import Loading from "app/Loading";
 import moment from "moment";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -52,7 +52,7 @@ export default function LatestWorldNews({}) {
           <p className=" text-base text-[#666666]">Don't miss daily news</p>
         </div>
         <div className=" my-4">
-          <ul className="flex justify-center  ">
+          <ul className="flex justify-center max-md:text-xs ">
             <li>
               <button
                 onClick={() => {
@@ -60,8 +60,8 @@ export default function LatestWorldNews({}) {
                 }}
                 className={`${
                   Tab === "Politics"
-                    ? " border bg-red-500 text-white px-4 py-2"
-                    : "tab-link border bg-gray-300 px-4 py-2"
+                    ? " border bg-red-500 text-white px-4 max-md:px-2 rounded py-2"
+                    : "tab-link border bg-gray-300 px-4 max-md:px-2 rounded py-2"
                 }`}
               >
                 Politics
@@ -74,8 +74,8 @@ export default function LatestWorldNews({}) {
                 }}
                 className={`${
                   Tab === "Technology"
-                    ? " border bg-red-500 text-white px-4 py-2"
-                    : "tab-link border bg-gray-300 px-4 py-2"
+                    ? " border bg-red-500 text-white px-4 max-md:px-2 rounded py-2"
+                    : "tab-link border bg-gray-300 px-4 max-md:px-2 rounded py-2"
                 }`}
               >
                 Technology
@@ -88,8 +88,8 @@ export default function LatestWorldNews({}) {
                 }}
                 className={`${
                   Tab === "Business"
-                    ? " border bg-red-500 text-white px-4 py-2"
-                    : "tab-link border bg-gray-300 px-4 py-2"
+                    ? " border bg-red-500 text-white px-4 max-md:px-2 rounded py-2"
+                    : "tab-link border bg-gray-300 px-4 max-md:px-2 rounded py-2"
                 }`}
               >
                 Business
@@ -133,17 +133,17 @@ export default function LatestWorldNews({}) {
                     className="w-2/5 object-cover rounded-lg"
                   />
                   <div className="ml-4">
-                    <span className="bg-red-500 text-white font-bold px-2 py-1 rounded hover:bg-gray-900 hover:text-white transition-all duration-200 ease-out cursor-pointer">
+                    <span className="bg-red-500 text-white font-bold px-2 py-1 rounded hover:bg-gray-900 hover:text-white transition-all duration-200 ease-out max-md:text-sm cursor-pointer">
                       {item.source.name}
                     </span>
-                    <h2 className="text-xl font-bold hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">
+                    <h2 className="text-xl max-md:text-sm mt-2 font-bold hover:text-red-500 transition-all duration-200 ease-out cursor-pointer">
                       {item.title}
                     </h2>
-                    <p className="text-muted-foreground">
+                    <p className="text-muted-foreground max-md:text-xs ">
                       {month} {day}, {year}
                     </p>
 
-                    <p className="text-muted-foreground">By {item.author}</p>
+                    <p className="text-base max-md:text-xs ">By {item.author}</p>
                   </div>
                 </div>
               );

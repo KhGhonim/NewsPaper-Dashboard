@@ -15,32 +15,13 @@ import CartIPopup from "../Cart/CartIPopup";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 
-export default function MainNavbar() {
+export default function MainNavbar({ isMainNavbarFixed }) {
   const { data: session, status } = useSession();
   const [activeIndex, setActiveIndex] = useState(null);
   const [Cart, setCart] = useState(false);
   const [User, setUser] = useState(false);
   const [Menu, setMenu] = useState("hidden");
   const [Search, setSearch] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsHidden(false);
-      } else {
-        setIsHidden(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [isHidden]);
-
-
-
-
 
   const SignUpModelCloser = (params) => {
     setMenu("hidden");
@@ -78,20 +59,21 @@ export default function MainNavbar() {
     setMenu((prevMenu) => (prevMenu === "hidden" ? "block" : "hidden"));
   };
 
-
-
   return (
     <div className="relative">
       <div
         className={`   ${
-          isHidden ? "block transition-all" : "fixed top-0 transition-all"
-        } duration-700 ease-in-out bg-white text-black  w-full  md:px-10 lg:px-16 shadow-sm z-50 `}
+          isMainNavbarFixed ? "fixed -translate-y-full max-md:mt-6" : "block "
+        } transition-all  duration-500 ease-in-out bg-white text-black  w-full  md:px-10 lg:px-16 shadow-sm z-50 `}
       >
         <div
           className={` relative container flex justify-between items-center   h-20 `}
         >
           {/* Logo */}
-          <Link className=" w-max  flex justify-center items-center " href={"/"}>
+          <Link
+            className=" w-max  flex justify-center items-center "
+            href={"/"}
+          >
             <Image
               src="/logo/KG.png"
               width={100}
@@ -302,9 +284,8 @@ export default function MainNavbar() {
             </div>
           </div>
         </div>
-
-        <Signin setUser={setUser} User={User} />
       </div>
+      <Signin setUser={setUser} User={User} />
     </div>
   );
 }

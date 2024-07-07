@@ -85,7 +85,7 @@ export default function PopularStories() {
           }
           return (
             <div key={index} className="tab-content">
-              <Link className="flex mb-4" href={`${item.url}`}>
+              <Link className="flex mb-4" href={`ArticlePage/${item.id}`}>
                 <img
                   src={item.urlToImage}
                   alt="News Image"

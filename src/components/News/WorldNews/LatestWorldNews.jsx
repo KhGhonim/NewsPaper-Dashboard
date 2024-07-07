@@ -2,6 +2,7 @@
 
 import Loading from "app/Loading";
 import moment from "moment";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -10,7 +11,7 @@ export default function LatestWorldNews({}) {
   const [WorldNewData, setWorldNewData] = useState([]);
   const [loading, setloading] = useState(true);
   useEffect(() => {
-    const localhost = "http://localhost:4000/articles";
+    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
       setloading(true);
@@ -25,7 +26,7 @@ export default function LatestWorldNews({}) {
 
       const data = await res.json();
 
-      const fillteredData = data.filter((item) => {
+      const fillteredData = data.articles.filter((item) => {
         return item.catagory === Tab;
       });
 
@@ -123,7 +124,8 @@ export default function LatestWorldNews({}) {
                 return null;
               }
               return (
-                <div
+                <Link
+                  href={`/ArticlePage/${item.id}`}
                   key={index}
                   className="flex mb-4 md:items-center border-t border-b"
                 >
@@ -143,9 +145,11 @@ export default function LatestWorldNews({}) {
                       {month} {day}, {year}
                     </p>
 
-                    <p className="text-base max-md:text-xs ">By {item.author}</p>
+                    <p className="text-base max-md:text-xs ">
+                      By {item.author}
+                    </p>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>

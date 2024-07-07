@@ -1,13 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 import { toast } from "react-toastify";
+import { useRouter } from "next/navigation";
 
 export default function SingIn() {
   const [email, setemail] = useState(null);
   const [password, setpassword] = useState(null);
   const [loading, setloading] = useState(false);
+  const router = useRouter();
   const HandleSignIn = async (eo) => {
     eo.preventDefault();
     setloading(true);
@@ -26,9 +28,12 @@ export default function SingIn() {
     if (res.ok) {
       toast.success("Login Successful");
       setloading(false);
+      await getSession();
+
     }
     eo.target.reset();
     setloading(false);
+    router.push("/");
   };
   return (
     <form onSubmit={HandleSignIn} className="login">

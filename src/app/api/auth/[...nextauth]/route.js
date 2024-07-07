@@ -12,7 +12,6 @@ export const authOptions = {
       async authorize(credentials, req, res) {
         await connectMongoDB();
         const user = await UserModel.findOne({ email: credentials.email });
-        console.log(user);
 
         if (user) {
           const match = await bcrypt.compare(
@@ -32,6 +31,9 @@ export const authOptions = {
   ],
 
   secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/signin",
+  },
 };
 
 const handler = NextAuth(authOptions);

@@ -15,7 +15,7 @@ export default function User() {
   };
 
   useEffect(() => {
-    const localhost = "http://localhost:4000/articles";
+    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
       setIsloading(true);
@@ -29,7 +29,7 @@ export default function User() {
       }
       const data = await res.json();
 
-      setUserData(data);
+      setUserData(data.articles || data);
     };
 
     getData();
@@ -44,7 +44,7 @@ export default function User() {
   const FilteredData =  UserData.filter((item) => {
     return item.Youtube !== "true";
   })
-  console.log(FilteredData);
+
   return (
     <div className="flex flex-wrap w-screen md:w-full ">
       <div className="w-full p-4 mt-4 md:border-r-2">
@@ -69,7 +69,7 @@ export default function User() {
               <Link
                 key={index}
                 className="w-full md:w-1/2  px-4 mb-8"
-                href={`/articles/${item.title}`}
+                href={`/ArticlePage/${item.id}`}
               >
                 <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg">
                   <img

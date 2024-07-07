@@ -40,9 +40,9 @@ export default function Signin({ setUser, User }) {
         <div className="flex justify-center items-center" ref={ref}>
           <div className="hidden md:block">
             <img
-              src="https://www.gonewsindia.com/assets/uploads/Screen_Shot_2021-08-14_at_1.50.25_PM2.png"
+              src="https://www.shutterstock.com/shutterstock/videos/1055155340/thumb/1.jpg"
               alt=""
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-3xl"
             />
           </div>
           <div className=" wrapper">

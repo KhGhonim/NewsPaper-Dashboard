@@ -18,7 +18,7 @@
   "include": [
     "src",
     "app"
-  ],
+, "src/middleware.js"  ],
   "exclude": [
     "node_modules",
     "build"

@@ -2,15 +2,13 @@
 import moment from "moment";
 import { notFound } from "next/navigation";
 import { useEffect, useState } from "react";
-import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
-import { Pagination } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 
 export default function VerticalCatagories() {
   const [VerticalCatagoriesSlider, setVerticalCatagoriesSlider] = useState([]);
 
   useEffect(() => {
-    const localhost = "http://localhost:4000/articles";
+    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
       const res = await fetch(localhost, {

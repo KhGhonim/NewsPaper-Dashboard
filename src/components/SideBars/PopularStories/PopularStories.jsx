@@ -11,7 +11,7 @@ export default function PopularStories() {
   const [PopularNewData, setWorldNewData] = useState([]);
   const [loading, setloading] = useState(true);
   useEffect(() => {
-    const localhost = "http://localhost:4000/articles";
+    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
       setloading(true);
@@ -25,7 +25,7 @@ export default function PopularStories() {
       }
       const data = await res.json();
 
-      const fillteredData = data.filter((item) => {
+      const fillteredData = data.articles.filter((item) => {
         return item.catagory === Tab;
       });
 

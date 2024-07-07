@@ -3,7 +3,7 @@
 import notFound from "app/not-found";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -11,7 +11,7 @@ export default function Slider() {
   const [UserSlider, setUserSlider] = useState([]);
 
   useEffect(() => {
-    const localhost = "http://localhost:4000/articles";
+    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
       const res = await fetch(localhost, {
@@ -25,7 +25,7 @@ export default function Slider() {
 
       const data = await res.json();
 
-      setUserSlider(data);
+      setUserSlider(data.articles || data);
     };
 
     getData();
@@ -34,7 +34,10 @@ export default function Slider() {
   return (
     <Swiper
       spaceBetween={1}
-    
+      autoplay={{
+        delay: 2500,
+        disableOnInteraction: false,
+      }}
       navigation={{
         nextEl: ".button-next",
         prevEl: ".button-prev",
@@ -53,7 +56,7 @@ export default function Slider() {
           spaceBetween: 0,
         },
       }}
-      modules={[Pagination, Navigation]}
+      modules={[Pagination, Navigation, Autoplay]}
       className="mySwiper"
     >
       {UserSlider.map((item, index) => {

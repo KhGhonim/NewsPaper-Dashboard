@@ -24,12 +24,10 @@ export default function HotNews() {
   const [UpperNavbarSlider, setUpperNavbarSlider] = useState([]);
 
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_API_UpperNavbar_2User;
-    const apiKey = process.env.NEXT_PUBLIC_API_UpperNavbar_1User;
-    const localhost= "http://localhost:4000/articles"
-
     const getData = async () => {
-      const res = await fetch(localhost || apiUrl || apiKey, {
+      const localhost = process.env.NEXT_PUBLIC_JSON_URL;
+
+      const res = await fetch(localhost, {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -73,7 +71,7 @@ export default function HotNews() {
                 return (
                   <SwiperSlide
                     key={index}
-                    className="h-10 flex justify-start items-start text-2xl cursor-pointer"
+                    className="h-10 flex justify-start items-start cursor-pointer"
                   >
                     {truncateText(item.title, 45)}
                   </SwiperSlide>

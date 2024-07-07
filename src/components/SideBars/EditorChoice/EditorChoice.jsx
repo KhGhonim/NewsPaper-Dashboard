@@ -12,7 +12,7 @@ export default function EditorChoice() {
   const [EditorChoice, setEditorChoice] = useState([]);
 
   useEffect(() => {
-    const localhost = "http://localhost:4000/articles";
+    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
       const res = await fetch(localhost, {
@@ -25,7 +25,7 @@ export default function EditorChoice() {
       }
 
       const data = await res.json();
-      setEditorChoice(data);
+      setEditorChoice(data.articles || data);
     };
 
     getData();

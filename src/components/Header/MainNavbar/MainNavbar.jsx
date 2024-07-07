@@ -178,7 +178,7 @@ export default function MainNavbar({ isMainNavbarFixed }) {
                       onClick={() => setCart(!Cart)}
                       className="flex justify-center items-center h-20 w-20 max-md:w-10 cursor-pointer bg-black text-white transition-all duration-500 ease-in"
                     >
-                      <IoClose size={16} />
+                      <IoClose size={50} />
                     </div>
 
                     <CartIPopup setCart={setCart} Cart={Cart} />
@@ -259,7 +259,7 @@ export default function MainNavbar({ isMainNavbarFixed }) {
                     onClick={() => setSearch(!Search)}
                     className="flex justify-center items-center h-20 w-20 max-md:w-10 cursor-pointer bg-black text-white transition-all duration-500 ease-in"
                   >
-                    <IoClose size={16} />
+                    <IoClose size={50} />
                   </div>
 
                   <SearchBar Search={Search} setSearch={setSearch} />

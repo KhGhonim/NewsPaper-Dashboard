@@ -18,7 +18,7 @@ export default function SingUp() {
       return;
     }
 
-    const IsUserExists = await fetch("../../../../app/api//userExist", {
+    const IsUserExists = await fetch("api/userExist", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function SingUp() {
       return;
     }
 
-    const response = await fetch("../../../../app/api/signup", {
+    const response = await fetch("api/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

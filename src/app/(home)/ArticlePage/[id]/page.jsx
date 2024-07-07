@@ -1,8 +1,8 @@
 "use client";
-import Catagories from "components/SideBars/Catagories/Catagories";
-import EditorChoice from "components/SideBars/EditorChoice/EditorChoice";
-import PopularStories from "components/SideBars/PopularStories/PopularStories";
-import Tags from "components/SideBars/Tags/Tags";
+import Catagories from "../../../../components/SideBars/Catagories/Catagories";
+import EditorChoice from "../../../../components/SideBars/EditorChoice/EditorChoice";
+import PopularStories from "../../../../components/SideBars/PopularStories/PopularStories";
+import Tags from "../../../../components/SideBars/Tags/Tags";
 import Accordion from "../Accordion";
 import SearchBar from "../SearchBar";
 import Article from "./Article";

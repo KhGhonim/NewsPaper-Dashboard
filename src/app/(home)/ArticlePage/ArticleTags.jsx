@@ -1,4 +1,3 @@
-import React from "react";
 import { FaTag } from "react-icons/fa";
 
 export default function ArticleTags({ tags }) {

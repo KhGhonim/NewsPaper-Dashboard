@@ -1,6 +1,6 @@
 "use client";
-import Signin from "components/auth/Sign/Sign";
-import { menuItems } from "constant/constant";
+import Signin from "../../../components/auth/Sign/Sign";
+import { menuItems } from "../../../constant/constant";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {

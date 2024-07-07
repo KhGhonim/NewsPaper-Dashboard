@@ -1,5 +1,5 @@
 "use client";
-import { CATEGORY_IMAGES } from "constant/constant";
+import { CATEGORY_IMAGES } from "../../../constant/constant";
 import Link from "next/link";
 import { useState } from "react";
 

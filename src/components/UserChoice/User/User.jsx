@@ -41,9 +41,9 @@ export default function User() {
     return <Loading />;
   }
 
-  const FilteredData =  UserData.filter((item) => {
+  const FilteredData = UserData.filter((item) => {
     return item.Youtube !== "true";
-  })
+  });
 
   return (
     <div className="flex flex-wrap w-screen md:w-full ">

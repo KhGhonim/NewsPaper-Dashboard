@@ -1,6 +1,6 @@
 "use client";
 
-import notFound from "app/not-found";
+import notFound from "../../app/not-found";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import { Autoplay, Pagination } from "swiper/modules";

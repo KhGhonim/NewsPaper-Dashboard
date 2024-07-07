@@ -1,5 +1,5 @@
 "use client";
-import { FloatingCatagoriesitems } from "constant/constant";
+import { FloatingCatagoriesitems } from "../../../constant/constant";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

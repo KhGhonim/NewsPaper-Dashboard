@@ -9,7 +9,7 @@ import Tags from "../../components/SideBars/Tags/Tags";
 import Catagories from "../../components/SideBars/Catagories/Catagories";
 import SliderTrendingNews from "../../components/SliderTrendingNews/SliderTrendingNews";
 import { ToastContainer } from "react-toastify";
-import EditorChoice from "components/SideBars/EditorChoice/EditorChoice";
+import EditorChoice from "../../components/SideBars/EditorChoice/EditorChoice";
 
 export default function Home() {
   return (

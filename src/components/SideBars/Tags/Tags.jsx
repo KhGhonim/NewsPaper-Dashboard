@@ -1,4 +1,4 @@
-import { CATEGORIES } from "constant/constant";
+import { CATEGORIES } from "../../../constant/constant";
 import Link from "next/link";
 
 export default function Tags() {

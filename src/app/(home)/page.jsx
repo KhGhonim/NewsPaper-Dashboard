@@ -11,6 +11,14 @@ import SliderTrendingNews from "../../components/SliderTrendingNews/SliderTrendi
 import { ToastContainer } from "react-toastify";
 import EditorChoice from "../../components/SideBars/EditorChoice/EditorChoice";
 
+export const metadata = {
+  title: "KGNEWS App",
+  description: "website for all new blog posts",
+  icons: {
+    icon: "/logo/KG.png",
+  },
+};
+
 export default function Home() {
   return (
     <>

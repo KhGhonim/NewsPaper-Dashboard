@@ -1,7 +1,6 @@
 "use client";
 
  
-import Loading from "../../../app/Loading.jsx";
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -42,9 +41,6 @@ export default function LatestWorldNews({}) {
     setTab(value);
   };
 
-  if (loading) {
-    return <Loading />;
-  }
 
   return (
     <div className="flex flex-wrap w-screen md:w-full ">

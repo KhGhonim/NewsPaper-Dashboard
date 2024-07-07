@@ -1,6 +1,5 @@
 "use client";
 
-import Loading from "../../../app/Loading.jsx";
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -40,9 +39,6 @@ export default function PopularStories() {
     setTab(value);
   };
 
-  if (!PopularNewData || loading) {
-    return <Loading />;
-  }
 
   return (
     <div className="block w-full  p-4 border-b-2">

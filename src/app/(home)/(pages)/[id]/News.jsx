@@ -1,6 +1,5 @@
 "use client";
 
-import Loading from "../../../../app/Loading.jsx";
 import moment from "moment";
 import { useSession } from "next-auth/react";
 import { notFound, useRouter } from "next/navigation";
@@ -45,9 +44,7 @@ export default function News({ id }) {
     }
   }, [status]);
 
-  if (!WorldNewData || loading || status === "loading") {
-    return <Loading />;
-  }
+
 
   if (status === "authenticated") {
     return (

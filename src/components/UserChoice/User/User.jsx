@@ -1,6 +1,5 @@
 "use client";
 
-import Loading from "../../../app/Loading.jsx";
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -37,9 +36,7 @@ export default function User() {
     setIsloading(false);
   }, [UserData]);
 
-  if (!UserData && Isloading) {
-    return <Loading />;
-  }
+
 
   const FilteredData = UserData.filter((item) => {
     return item.Youtube !== "true";

@@ -1,6 +1,6 @@
 "use client";
 
-import Loading from "app/Loading";
+import Loading from "../../../app/Loading";
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";

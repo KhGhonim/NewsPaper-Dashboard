@@ -1,7 +1,7 @@
 "use client";
 
  
-import Loading from "../../../app/Loading";
+import Loading from "../../../app/Loading.jsx";
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";

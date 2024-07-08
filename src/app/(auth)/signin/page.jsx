@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 
 export default function page() {
   const [email, setemail] = useState(null);
@@ -31,10 +31,10 @@ export default function page() {
       toast.success("Login Successful");
       setIsloading(false);
       await getSession();
+      router.push("/");
     }
     eo.target.reset();
     setIsloading(false);
-    router.push("/");
   };
   return (
     <section className="bg-white">
@@ -136,7 +136,7 @@ export default function page() {
                   disabled={Isloading}
                   className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                 >
-                {Isloading ? "Loading..." : "Log to your account"}
+                  {Isloading ? "Loading..." : "Log to your account"}
                 </button>
 
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
@@ -151,6 +151,7 @@ export default function page() {
           </div>
         </main>
       </div>
+      <ToastContainer />
     </section>
   );
 }

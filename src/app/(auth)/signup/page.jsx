@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 export default function page() {
   const [email, setemail] = useState(null);
@@ -217,6 +218,8 @@ export default function page() {
           </div>
         </main>
       </div>
+      <ToastContainer />
+
     </section>
   );
 }

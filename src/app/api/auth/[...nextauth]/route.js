@@ -1,5 +1,5 @@
-import UserModel from "Helpers/models/userSignup/userSignup";
-import { connectMongoDB } from "Helpers/MongoDB/MongoDB";
+import UserModel from "../../../../Helpers/models/userSignup/userSignup";
+import { connectMongoDB } from "../../../../Helpers/MongoDB/MongoDB";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";

@@ -1,5 +1,5 @@
-import { connectMongoDB } from "Helpers/MongoDB/MongoDB";
-import UserModel from "Helpers/models/userSignup/userSignup";
+import { connectMongoDB } from "../../../Helpers/MongoDB/MongoDB";
+import UserModel from "../../../Helpers/models/userSignup/userSignup";
 import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
 

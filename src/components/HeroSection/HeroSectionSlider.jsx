@@ -10,7 +10,7 @@ import { notFound } from "next/navigation";
 import { FaClock } from "react-icons/fa";
 import moment from "moment";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
-import Loading from "../../app/loading";
+import Loading from "app/loading";
 
 export default function HeroSectionSlider() {
   const [arrData, setstate] = useState([]);
@@ -42,7 +42,7 @@ export default function HeroSectionSlider() {
 
   const filterData = arrData?.filter((item) => item?.Youtube !== "true");
 
-  if (!arrData && arrData.length < 0) {
+  if (!arrData && arrData.length === 0) {
     return <Loading />;
   }
 

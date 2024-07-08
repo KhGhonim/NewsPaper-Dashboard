@@ -10,6 +10,7 @@ import { notFound } from "next/navigation";
 import { FaClock } from "react-icons/fa";
 import moment from "moment";
 import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
+import Loading from "../../app/loading";
 
 export default function HeroSectionSlider() {
   const [arrData, setstate] = useState([]);
@@ -42,27 +43,7 @@ export default function HeroSectionSlider() {
   const filterData = arrData?.filter((item) => item?.Youtube !== "true");
 
   if (!arrData && arrData.length < 0) {
-    return (
-      <div className="py-4 rounded shadow-md w-screen h-[600px] max-sm:h-[400px] animate-pulse bg-gray-50">
-        <div className="flex p-4 space-x-4 sm:px-8">
-          <div className="flex-shrink-0 w-16 h-16 rounded-full bg-gray-300"></div>
-          <div className="flex-1 py-2 space-y-4">
-            <div className="w-full h-3 rounded bg-gray-300"></div>
-            <div className="w-5/6 h-3 rounded bg-gray-300"></div>
-          </div>
-        </div>
-        <div className="p-4 space-y-4 sm:px-8">
-          <div className="w-full h-4 rounded bg-gray-300"></div>
-          <div className="w-full h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-          <div className="w-3/4 h-4 rounded bg-gray-300"></div>
-        </div>
-      </div>
-    );
+    return <Loading />;
   }
 
   return (

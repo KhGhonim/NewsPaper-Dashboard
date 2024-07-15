@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 export default function SingUp() {
   const [email, setemail] = useState(null);
+  const [name, setname] = useState(null);
   const [loading, setloading] = useState(false);
   const [password, setpassword] = useState(null);
   const [ConfirmPW, setConfirmPW] = useState(null);
@@ -38,7 +39,7 @@ export default function SingUp() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, ConfirmPW }),
+      body: JSON.stringify({ email, password, ConfirmPW, name }),
     });
     console.log(response);
     if (response.ok) {
@@ -54,6 +55,17 @@ export default function SingUp() {
   };
   return (
     <form onSubmit={HandleSignUp} className="signup">
+          <div className="field">
+        <input
+          onChange={(eo) => {
+            let value = eo.target.value;
+            setname(value.toLowerCase());
+          }}
+          type="text"
+          placeholder="Username"
+          required
+        />
+      </div>
       <div className="field">
         <input
           onChange={(eo) => {

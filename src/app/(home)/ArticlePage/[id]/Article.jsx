@@ -9,7 +9,7 @@ export default function Article({
   author,
   title,
   catagory,
-  description,
+  content,
   urlToImage,
   publishedAt,
   CatagoriesRelatedArticles
@@ -18,7 +18,7 @@ export default function Article({
   return (
     <div>
       <SliderAndTitle author={author} title={title} urlToImage={urlToImage} />
-      <ArticleDescription />
+      <ArticleDescription content={content} />
       <ArticleTags tags={catagory} />
       <ArticleAuthor author={author} />
       <RelatedArticles CatagoriesRelatedArticles={CatagoriesRelatedArticles}

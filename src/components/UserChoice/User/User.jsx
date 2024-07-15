@@ -14,11 +14,9 @@ export default function User() {
   };
 
   useEffect(() => {
-    const localhost = process.env.NEXT_PUBLIC_JSON_URL;
-
     const getData = async () => {
       setIsloading(true);
-      const res = await fetch(localhost, {
+      const res = await fetch("/api/getUsersArticle", {
         cache: "no-cache",
         next: { revalidate: 0 },
       });
@@ -28,19 +26,24 @@ export default function User() {
       }
       const data = await res.json();
 
-      setUserData(data.articles || data);
+      setUserData(data);
     };
 
     getData();
 
     setIsloading(false);
-  }, [UserData]);
+  }, []);
 
-
-
-  const FilteredData = UserData.filter((item) => {
-    return item.Youtube !== "true";
-  });
+  if (Isloading) {
+    return (
+      <div className="h-screen flex justify-center items-center ">
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin bg-red-500"></div>
+      </div>
+    );
+  }
+  // const FilteredData = UserData.filter((item) => {
+  //   return item.Youtube !== "true";
+  // });
 
   return (
     <div className="flex flex-wrap w-screen md:w-full ">
@@ -55,23 +58,23 @@ export default function User() {
         <div className="h-1 w-20 bg-red-500 mb-4"></div>
 
         <div className="flex flex-wrap -mx-4">
-          {FilteredData.slice(0, visibleNews).map((item, index) => {
-            if (item.urlToImage === null) {
+          {UserData.slice(0, visibleNews).map((item, index) => {
+            if (item.postImage === null) {
               return null;
             }
-            const day = moment(item.publishedAt).date();
-            const month = moment(item.publishedAt).format("MMMM");
-            const year = moment(item.publishedAt).year();
+            const day = moment(item.createdAt).date();
+            const month = moment(item.createdAt).format("MMMM");
+            const year = moment(item.createdAt).year();
             return (
               <Link
                 key={index}
                 className="w-full md:w-1/2  px-4 mb-8"
-                href={`/ArticlePage/${item.id}`}
+                href={`/ArticlePage/${item._id}`}
               >
                 <div className="rounded-lg overflow-hidden shadow-md hover:shadow-lg">
                   <img
                     className="w-full h-44 object-cover"
-                    src={item.urlToImage}
+                    src={item.postImage}
                     alt="Sports Image"
                   />
                   <div className="p-4">

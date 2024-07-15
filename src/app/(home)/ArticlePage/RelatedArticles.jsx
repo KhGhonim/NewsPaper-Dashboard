@@ -2,12 +2,13 @@ import moment from "moment";
 import Link from "next/link";
 
 export default function RelatedArticles({ CatagoriesRelatedArticles }) {
+  console.log(CatagoriesRelatedArticles);
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-4">Related Posts</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {CatagoriesRelatedArticles.map((item, index) => {
-          if (item.urlToImage === undefined || item.urlToImage === null) {
+          if (item.postImage === undefined || item.postImage === null) {
             return null;
           }
           const day = moment(item.publishedAt).date();
@@ -15,12 +16,12 @@ export default function RelatedArticles({ CatagoriesRelatedArticles }) {
           const year = moment(item.publishedAt).year();
           return (
             <Link
-              href={`/ArticlePage/${item.id}`}
+              href={`/ArticlePage/${item._id}`}
               key={index}
               className="bg-card rounded-lg shadow-md overflow-hidden"
             >
               <img
-                src={item.urlToImage}
+                src={item.postImage}
                 alt={item.title}
                 className="w-full h-48 object-cover"
               />

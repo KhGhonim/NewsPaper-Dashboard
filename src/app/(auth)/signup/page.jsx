@@ -10,6 +10,7 @@ export default function page() {
   const [loading, setloading] = useState(false);
   const [password, setpassword] = useState(null);
   const [ConfirmPW, setConfirmPW] = useState(null);
+  const [name, setname] = useState(null);
   const router = useRouter();
   const HandleSignUp = async (eo) => {
     eo.preventDefault();
@@ -40,7 +41,7 @@ export default function page() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ email, password, ConfirmPW }),
+      body: JSON.stringify({ email, password, ConfirmPW, name }),
     });
 
     if (response.ok) {
@@ -119,6 +120,27 @@ export default function page() {
               onSubmit={HandleSignUp}
               className="mt-8 grid grid-cols-6 gap-6"
             >
+              <div className="col-span-6">
+                <label
+                  htmlFor="Username"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  {" "}
+                  Username{" "}
+                </label>
+
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  onChange={(eo) => {
+                    let value = eo.target.value;
+                    setname(value.toLowerCase());
+                  }}
+                  className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm outline-transparent"
+                />
+              </div>
+
               <div className="col-span-6">
                 <label
                   htmlFor="Email"
@@ -217,7 +239,6 @@ export default function page() {
           </div>
         </main>
       </div>
-
     </section>
   );
 }

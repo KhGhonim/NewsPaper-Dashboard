@@ -9,10 +9,13 @@ export async function POST(request) {
 
   const salt = await bcrypt.genSalt();
   const hashedPassword = await bcrypt.hash(objFromFrontEnd.password, salt);
-  UserModel.create({
+
+  await UserModel.create({
     email: objFromFrontEnd.email,
     password: hashedPassword,
     confirmPassword: hashedPassword,
+    name: objFromFrontEnd.name,
   });
+
   return NextResponse.json({});
 }

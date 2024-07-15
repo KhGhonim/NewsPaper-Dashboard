@@ -10,32 +10,35 @@ import { useEffect, useState } from "react";
 
 export default function page({ params }) {
   const { id: UrlID } = params;
+  const [isloading, setisloading] = useState(false);
 
   const [DataForOneArticle, setDataForOneArticle] = useState([]);
-
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_JSON_URL}`);
-      const data = await response.json();
-      setDataForOneArticle(data.articles);
-    };
-    fetchData();
-  }, []);
+    if (UrlID) {
+      setisloading(true);
+      const fetchData = async () => {
+        const response = await fetch(`/api/getUsersArticle`);
+        const data = await response.json();
+        setDataForOneArticle(data);
+      };
+      fetchData();
+
+      setisloading(false);
+    }
+  }, [UrlID]);
 
   const FiltereArticle = DataForOneArticle.find((item) => {
-    return item.id === UrlID;
+    return item._id === UrlID;
   });
 
   const {
     source,
-    id,
     author,
     title,
     catagory,
     description,
-    url,
-    urlToImage,
-    publishedAt,
+    postImage,
+    createdAt,
     content,
   } = FiltereArticle || {};
 
@@ -43,6 +46,13 @@ export default function page({ params }) {
     return item.catagory === catagory;
   });
 
+  if (isloading) {
+    return (
+      <div className="h-screen flex justify-center items-center ">
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin bg-red-500"></div>
+      </div>
+    );
+  }
   return (
     <div className="w-screen ">
       <Accordion source={title} />
@@ -50,12 +60,12 @@ export default function page({ params }) {
         <div className="w-2/3 max-md:w-screen p-7 rounded-xl">
           <Article
             source={source}
+            content={content}
             author={author}
             title={title}
             catagory={catagory}
-            urlToImage={urlToImage}
-            publishedAt={publishedAt}
-            description={description}
+            urlToImage={postImage}
+            publishedAt={createdAt}
             CatagoriesRelatedArticles={CatagoriesRelatedArticles}
           />
         </div>

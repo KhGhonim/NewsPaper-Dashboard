@@ -285,7 +285,9 @@ export default function MainNavbar({ isMainNavbarFixed }) {
           </div>
         </div>
       </div>
-      <Signin setUser={setUser} User={User} />
+      {status === "unauthenticated" ? (
+        <Signin setUser={setUser} User={User} />
+      ) : null}
     </div>
   );
 }

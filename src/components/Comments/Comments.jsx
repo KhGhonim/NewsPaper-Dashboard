@@ -17,12 +17,13 @@ export default function Comments() {
       return;
     }
     setIsloading(true);
-    const res = await fetch("/api/comments", {
+    const res = await fetch("/api/comments",  {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ comment, title: session.user.name }),
+      
     });
     const data = await res.json();
     if (res.ok) {
@@ -39,6 +40,8 @@ export default function Comments() {
         headers: {
           "Content-Type": "application/json",
         },
+        cache: "no-cache",
+        next: { revalidate: 0 },
       });
       const data = await res.json();
       setComnentData(data);

@@ -7,10 +7,10 @@ export async function POST(request) {
 
   await connectMongoDB();
 
-  const addedComment = await CommentModel.create({
+  const createdComment = await CommentModel.create({
     content: comment,
     title: title,
   });
 
-  return NextResponse.json({ addedComment });
+  return NextResponse.json(createdComment);
 }

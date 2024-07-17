@@ -17,18 +17,20 @@ export default function Comments() {
       return;
     }
     setIsloading(true);
-    const res = await fetch("/api/comments",  {
+    const res = await fetch("/api/comments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ comment, title: session.user.name }),
-      
     });
     const data = await res.json();
+
     if (res.ok) {
       setcomment("");
       setComnentData([data, ...ComnentData]);
+    } else {
+      console.error("Failed to add comment:", data); // Log error if any
     }
     setIsloading(false);
   };
@@ -49,13 +51,15 @@ export default function Comments() {
 
     GetComments();
   }, []);
+
+  console.log(ComnentData);
   return (
     <div className="max-w-2xl mx-auto p-4  rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold mb-4">Comments</h2>
 
       {ComnentData.length > 0 ? (
         <div className="space-y-4">
-          {ComnentData.map((comment) => {
+          {ComnentData?.map((comment) => {
             return (
               <div
                 key={comment._id}

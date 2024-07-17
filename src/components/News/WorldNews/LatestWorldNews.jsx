@@ -1,6 +1,5 @@
 "use client";
 
- 
 import moment from "moment";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -40,7 +39,6 @@ export default function LatestWorldNews({}) {
   const HandleTabs = (value) => {
     setTab(value);
   };
-
 
   return (
     <div className="flex flex-wrap w-screen md:w-full ">
@@ -152,6 +150,8 @@ export default function LatestWorldNews({}) {
           </div>
         </div>
       </div>
+
+
     </div>
   );
 }

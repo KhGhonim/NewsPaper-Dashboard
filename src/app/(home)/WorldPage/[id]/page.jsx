@@ -11,6 +11,7 @@ import Loading from "../../../../app/loading";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import moment from "moment";
+import Comments from "../../../../components/Comments/Comments";
 
 export default function page({ params }) {
   const { id: UrlID } = params;
@@ -157,7 +158,7 @@ export default function page({ params }) {
                 <Link
                   href={`/WorldPage/${item.id}`}
                   key={index}
-                  className="bg-card rounded-lg shadow-md overflow-hidden"
+                  className=" rounded-lg shadow-md overflow-hidden"
                 >
                   <img
                     src={item.urlToImage}
@@ -167,7 +168,7 @@ export default function page({ params }) {
                   <div className="p-4">
                     <span className="bg-primary text-primary-foreground px-2 py-1 text-sm font-semibold rounded"></span>
                     <h3 className="text-lg font-bold mt-2">{item.title}</h3>
-                    <p className="text-muted-foreground mt-1 flex items-center">
+                    <p className=" mt-1 flex items-center">
                       <span className="mr-2">🗓️</span> {month} {day}, {year}
                     </p>
                   </div>
@@ -177,6 +178,7 @@ export default function page({ params }) {
           </div>
         </div>
       </div>
+      <Comments />
     </div>
   );
 }

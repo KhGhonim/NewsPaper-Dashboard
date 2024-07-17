@@ -36,7 +36,7 @@ export default function page({ params }) {
     author,
     title,
     catagory,
-    description,
+
     postImage,
     createdAt,
     content,

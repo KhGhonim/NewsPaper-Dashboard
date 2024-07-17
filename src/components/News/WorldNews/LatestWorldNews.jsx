@@ -122,7 +122,7 @@ export default function LatestWorldNews({}) {
               }
               return (
                 <Link
-                  href={`/ArticlePage/${item.id}`}
+                  href={`/WorldPage/${item.id}`}
                   key={index}
                   className="flex mb-4 md:items-center border-t border-b"
                 >

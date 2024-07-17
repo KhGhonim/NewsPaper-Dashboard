@@ -35,7 +35,6 @@ export default function page({ params }) {
   const FiltereArticle = DataForOneArticle.find((item) => {
     return item.id === UrlID;
   });
-  console.log(FiltereArticle);
 
   const {
     author,
@@ -55,7 +54,6 @@ export default function page({ params }) {
     return item.catagory === catagory;
   });
 
-  console.log(CatagoriesRelatedArticles);
 
   return (
     <div className="min-h-screen ">

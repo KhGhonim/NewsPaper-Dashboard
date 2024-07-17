@@ -8,11 +8,14 @@ import { FaHeart, FaTrash } from "react-icons/fa";
 
 export default function Comments() {
   const { data: session, status } = useSession();
-  const [comment, setcomment] = useState(null);
+  const [comment, setcomment] = useState("");
   const [ComnentData, setComnentData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
   const CommentHandler = async (eo) => {
     eo.preventDefault();
+    if (comment.length > 200) {
+      return;
+    }
     setIsloading(true);
     const res = await fetch("/api/comments", {
       method: "POST",
@@ -22,10 +25,11 @@ export default function Comments() {
       body: JSON.stringify({ comment, title: session.user.name }),
     });
     const data = await res.json();
-    if (res.status === 200) {
-      setcomment(null);
-      setIsloading(false);
+    if (res.ok) {
+      setcomment("");
+      setComnentData([data, ...ComnentData]);
     }
+    setIsloading(false);
   };
 
   useEffect(() => {
@@ -41,17 +45,17 @@ export default function Comments() {
     };
 
     GetComments();
-  }, [CommentHandler]);
+  }, []);
   return (
     <div className="max-w-2xl mx-auto p-4  rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold mb-4">Comments</h2>
 
       {ComnentData.length > 0 ? (
         <div className="space-y-4">
-          {ComnentData.map((comment, index) => {
+          {ComnentData.map((comment) => {
             return (
               <div
-                key={index}
+                key={comment._id}
                 className="p-4  rounded-lg shadow-sm flex justify-between items-start"
               >
                 <div className="flex items-center space-x-4">
@@ -89,17 +93,21 @@ export default function Comments() {
       {status === "authenticated" ? (
         <form onSubmit={CommentHandler} className="mt-6 flex flex-col ">
           <textarea
+            maxLength={200}
             onChange={(eo) => setcomment(eo.target.value)}
-            defaultValue={comment}
+            value={comment}
             className="w-full p-2 bg-input text-foreground rounded-lg border border-border  transition-colors duration-200"
             placeholder="Add a comment..."
           ></textarea>
+          <p className="text-gray-500 text-xs">
+            {200 - comment.length} characters remaining
+          </p>
           <button
             disabled={Isloading}
             type="submit"
             className="mt-2 bg-black text-white hover:bg-black/80 p-2 rounded-lg transition-colors duration-300 ease-in-out "
           >
-          {Isloading ? "Adding Your Comment..." : "Comment"}
+            {Isloading ? "Adding Your Comment..." : "Comment"}
           </button>
         </form>
       ) : (

@@ -11,6 +11,20 @@ export default function Comments() {
   const [comment, setcomment] = useState("");
   const [ComnentData, setComnentData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
+
+      const GetComments = async () => {
+      const res = await fetch("/api/getComments", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-cache",
+        next: { revalidate: 0 },
+      });
+      const data = await res.json();
+      setComnentData(data);
+    };
+  
   const CommentHandler = async (eo) => {
     eo.preventDefault();
     if (comment.length > 200) {
@@ -29,28 +43,18 @@ export default function Comments() {
     if (res.ok) {
       setcomment("");
       setComnentData([data, ...ComnentData]);
+          GetComments();
     } else {
       console.error("Failed to add comment:", data); // Log error if any
     }
     setIsloading(false);
   };
 
-  useEffect(() => {
-    const GetComments = async () => {
-      const res = await fetch("/api/getComments", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        cache: "no-cache",
-        next: { revalidate: 0 },
-      });
-      const data = await res.json();
-      setComnentData(data);
-    };
 
-    GetComments();
-  }, [ComnentData]);
+
+
+
+
 
   console.log(ComnentData);
   return (

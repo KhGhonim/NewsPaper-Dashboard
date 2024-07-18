@@ -12,7 +12,8 @@ export default function Comments() {
   const [ComnentData, setComnentData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
 
-      const GetComments = async () => {
+  useEffect(() => {
+    const GetComments = async () => {
       const res = await fetch("/api/getComments", {
         method: "GET",
         headers: {
@@ -24,6 +25,9 @@ export default function Comments() {
       const data = await res.json();
       setComnentData(data);
     };
+
+    GetComments();
+  }, []);
   
   const CommentHandler = async (eo) => {
     eo.preventDefault();

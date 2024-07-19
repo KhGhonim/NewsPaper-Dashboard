@@ -13,7 +13,6 @@ export default function Comments() {
   const [ComnentData, setComnentData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
   const UrlID = useParams().id;
-
   const CommentHandler = async (eo) => {
     eo.preventDefault();
     if (comment.length > 200) {
@@ -37,7 +36,6 @@ export default function Comments() {
     }
     setIsloading(false);
   };
-
 
   useEffect(() => {
     const GetComments = async () => {

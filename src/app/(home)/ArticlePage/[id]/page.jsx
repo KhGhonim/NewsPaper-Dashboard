@@ -1,4 +1,5 @@
 "use client";
+import Comments from "../../../../components/Comments/Comments";
 import Catagories from "../../../../components/SideBars/Catagories/Catagories";
 import EditorChoice from "../../../../components/SideBars/EditorChoice/EditorChoice";
 import PopularStories from "../../../../components/SideBars/PopularStories/PopularStories";
@@ -68,6 +69,7 @@ export default function page({ params }) {
             publishedAt={createdAt}
             CatagoriesRelatedArticles={CatagoriesRelatedArticles}
           />
+          <Comments />
         </div>
         <div className="hidden md:flex w-1/3 flex-col gap-5 border-l-2 p-2  ">
           <SearchBar />

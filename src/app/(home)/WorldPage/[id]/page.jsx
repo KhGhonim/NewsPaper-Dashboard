@@ -42,7 +42,6 @@ export default function page({ params }) {
     catagory,
     description,
     urlToImage,
-    createdAt,
     content,
   } = FiltereArticle || [];
 
@@ -176,7 +175,7 @@ export default function page({ params }) {
           </div>
         </div>
       </div>
-      <Comments />
+
     </div>
   );
 }

@@ -17,6 +17,14 @@ const commentsSchema = new Schema(
       default:
         "https://www.testhouse.net/wp-content/uploads/2021/11/default-avatar.jpg",
     },
+    postId: {
+      type: String,
+    },
+
+    numberoflikes: {
+      type: Number,
+      default: 0,
+    },
   },
   {
     timestamps: true,

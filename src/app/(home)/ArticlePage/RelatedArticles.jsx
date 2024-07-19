@@ -2,7 +2,6 @@ import moment from "moment";
 import Link from "next/link";
 
 export default function RelatedArticles({ CatagoriesRelatedArticles }) {
-  console.log(CatagoriesRelatedArticles);
   return (
     <div className="p-6">
       <h2 className="text-2xl font-bold mb-4">Related Posts</h2>

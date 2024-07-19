@@ -3,6 +3,7 @@
 import moment from "moment";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { FaHeart, FaTrash } from "react-icons/fa";
 
@@ -11,6 +12,10 @@ export default function Comments() {
   const [comment, setcomment] = useState("");
   const [ComnentData, setComnentData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
+  const UrlID = useParams().id;
+
+
+
   const CommentHandler = async (eo) => {
     eo.preventDefault();
     if (comment.length > 200) {
@@ -22,7 +27,7 @@ export default function Comments() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ comment, title: session.user.name }),
+      body: JSON.stringify({ comment, title: session.user.name, UrlID }),
     });
     const data = await res.json();
 
@@ -35,9 +40,10 @@ export default function Comments() {
     setIsloading(false);
   };
 
+
   useEffect(() => {
     const GetComments = async () => {
-      const res = await fetch("/api/getComments", {
+      const res = await fetch(`/api/getComments?postId=${UrlID}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -52,7 +58,6 @@ export default function Comments() {
     GetComments();
   }, []);
 
-  console.log(ComnentData);
   return (
     <div className="max-w-2xl mx-auto p-4  rounded-lg shadow-md">
       <h2 className="text-2xl font-semibold mb-4">Comments</h2>

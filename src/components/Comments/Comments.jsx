@@ -18,6 +18,7 @@ export default function Comments() {
   const [NewEditedComment, setNewEditedComment] = useState("");
   const [EditId, setEditId] = useState(null);
   const UrlID = useParams().id;
+  const UserEmail = session?.user?.email;
 
   const HandleEdit = (content) => {
     setEditor(true);
@@ -68,12 +69,14 @@ export default function Comments() {
   }, []);
 
   // Delete a comment
+
   const DeleteComment = async (id) => {
     const res = await fetch(`/api/deleteComment?id=${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
+      body: JSON.stringify({ UserEmail }),
       cache: "no-cache",
       next: { revalidate: 0 },
     });
@@ -83,10 +86,11 @@ export default function Comments() {
       toast.success("Comment deleted successfully");
       setComnentData(ComnentData.filter((comment) => comment._id !== id));
     } else {
-      console.error("Failed to delete comment:", data); // Log error if any
+      toast.error("Only admins are able to delete comment"); // Log error if any
     }
   };
-  const UserEmail = session?.user?.email;
+
+  // Update a comment
   const UpdateComment = async (eo) => {
     eo.preventDefault();
     const res = await fetch(`/api/update/updateComment?id=${EditId}`, {

@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { notFound, useSearchParams } from "next/navigation";
 import moment from "moment";
-
 export default function Search() {
   const searchParams = useSearchParams();
   const search = searchParams.get("q");

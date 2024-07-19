@@ -1,13 +1,10 @@
-import { Suspense } from "react";
-import Search from "./Search";
-import Loading from "../../../loading";
+import Search from "./Search.jsx";
+import Loading from "../../../loading.jsx";
 
 export default function page() {
   return (
     <div>
-      <Suspense fallback={<Loading />}>
-        <Search />
-      </Suspense>
+      <Search />
     </div>
   );
 }

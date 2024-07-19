@@ -26,6 +26,7 @@ export default function BestInCatagories() {
 
     getData();
   }, []);
+  console.log(BestCatagoriesData);
 
   return (
     <div className="w-full p-4 border rounded-lg ">

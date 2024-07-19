@@ -27,6 +27,8 @@ export default function VerticalCatagories() {
 
     getData();
   }, []);
+
+  console.log(VerticalCatagoriesSlider);
   return (
     <div className="max-sm:hidden md:block border relative p-4 rounded-lg flex flex-col space-y-4 bg-gray-100 h-full">
       <div className="overflow-y-scroll h-96">

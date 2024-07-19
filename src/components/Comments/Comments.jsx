@@ -14,8 +14,6 @@ export default function Comments() {
   const [Isloading, setIsloading] = useState(false);
   const UrlID = useParams().id;
 
-
-
   const CommentHandler = async (eo) => {
     eo.preventDefault();
     if (comment.length > 200) {

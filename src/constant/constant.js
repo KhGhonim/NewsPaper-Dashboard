@@ -18,64 +18,62 @@ export const ActionItems = [
 
 export const CATEGORY_IMAGES = [
   {
-    name: "Sport",
+    name: "Health",
     image:
       "https://indiansportsassociation.org/wp-content/uploads/2019/06/banner.jpg",
-    link: "/sport",
+    link: "/Health",
   },
   {
     name: "Politics",
     image:
-      "https://news.unl.edu/sites/default/files/styles/large_aspect/public/media/1709.014COJMC_heroBanner_1.jpg?itok=eNmyO9EM",
-    link: "/politics",
+      "https://blog.politics.ox.ac.uk/wp-content/uploads/2023/05/visual-politics-scaled.jpg",
+    link: "/Politics",
   },
   {
     name: "Technology",
     image:
       "https://moonpreneur.com/blog/wp-content/uploads/2023/07/top-technology-news.png",
-    link: "/technology",
+    link: "/Technology",
   },
   {
     name: "Business",
     image:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNjPGGNSjIECuVxu6_swvMOSIH15uQcZpvww&s",
-    link: "/business",
+    link: "/Business",
   },
 ];
 
 export const CATEGORIES = [
-  { name: "BUSINESS", link: "/business" },
-  { name: "POLITICS", link: "/politics" },
-  { name: "HEALTH", link: "/health" },
-  { name: "SCIENCE", link: "/science" },
-  { name: "SPORTS", link: "/sports" },
-  { name: "TECHNOLOGY", link: "/technology" },
+  { name: "BUSINESS", link: "/Business" },
+  { name: "POLITICS", link: "/Politics" },
+  { name: "HEALTH", link: "/Health" },
+  { name: "TECHNOLOGY", link: "/Technology" },
 ];
 
 export const FloatingCatagoriesitems = [
   {
-    href: "/politics",
+    href: "/Politics",
     className: "flex items-center justify-center h-16 border-b-4",
     imgSrc: "/Socail/politics.png",
     alt: "bucket-icon",
     submenu: "Politics",
   },
   {
-    href: "/technology",
+    href: "/Technology",
     className: "flex items-center justify-center h-16 border-b-4",
     imgSrc: "/Socail/technology.png",
     alt: "bucket-icon",
     submenu: "Technology",
   },
   {
-    href: "/health",
+    href: "/Health",
     className: "flex items-center justify-center h-16 border-b-4",
     imgSrc: "/Socail/healthcare.png",
     alt: "bucket-icon",
     submenu: "Health",
   },
   {
-    href: "/business",
+    href: "/Business",
     className: "flex items-center justify-center h-16",
     imgSrc: "/Socail/human.png",
     alt: "bucket-icon",

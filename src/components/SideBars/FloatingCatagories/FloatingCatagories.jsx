@@ -42,7 +42,7 @@ export default function FloatingCatagories() {
           key={index}
         >
           <Link
-            href={item.href}
+            href={`/catagory${item.href}`}
             className="flex items-center justify-center h-16 border-b-4"
           >
             <img
@@ -58,7 +58,7 @@ export default function FloatingCatagories() {
               <div className="p-2">
                 {/* Ensure submenu remains visible as long as either is being hovered */}
                 <Link
-                  href={item.href}
+                  href={`/catagory${item.href}`}
                   className="flex items-center w-32 justify-center bg-red-600 text-white p-2 rounded shadow-lg cursor-pointer"
                 >
                   <span>{item.submenu}</span>

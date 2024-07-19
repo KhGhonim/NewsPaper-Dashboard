@@ -10,7 +10,7 @@ export default function Tags() {
         {CATEGORIES.map((item, index) => (
           <Link
             key={index}
-            href={item.link}
+            href={`/catagory${item.link}`}
             className="bg-black text-white px-3 py-1 rounded  ml-3 hover:bg-red-500 transition-all duration-200 ease-out cursor-pointer"
           >
             {item.name}

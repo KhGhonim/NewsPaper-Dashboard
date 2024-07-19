@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 
 export default function ImageID({id}) {
@@ -17,7 +18,7 @@ export default function ImageID({id}) {
 
         <div className="flex gap-2 mt-2  items-center">
           <FaArrowAltCircleRight color="red" size={16} />
-          <span className="font-bold">HOME</span>
+          <Link className="font-bold" href={"/"}>HOME</Link>
           <FaArrowAltCircleRight color="red" size={16} />
           <span className="font-bold capitalize">{id}</span>
         </div>

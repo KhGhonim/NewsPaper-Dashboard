@@ -19,7 +19,7 @@ export default function Catagories() {
       <div className="h-1 w-20 bg-red-500 mb-4"></div>
       <div className="flex flex-col gap-5 px-3">
         {CATEGORY_IMAGES.map((item, index) => (
-          <Link key={index} href={item.link} className="flex flex-col">
+          <Link key={index} href={`/catagory${item.link}`} className="flex flex-col">
             <div
               className="relative"
               onMouseEnter={() => handleMouseEnter(index)}

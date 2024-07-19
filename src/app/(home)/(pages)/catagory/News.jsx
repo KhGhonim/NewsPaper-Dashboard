@@ -12,7 +12,6 @@ export default function News({ id }) {
   const router = useRouter();
   useEffect(() => {
     const localhost = process.env.NEXT_PUBLIC_JSON_URL;
-
     const getData = async () => {
       setloading(true);
       const res = await fetch(localhost, {
@@ -27,7 +26,7 @@ export default function News({ id }) {
       const data = await res.json();
 
       const fillteredData = data.articles.filter((item) => {
-        return String(item.catagory).toLowerCase() == id;
+        return String(item.catagory).toLowerCase() == id.toLowerCase();
       });
 
       setWorldNewData(fillteredData);
@@ -44,7 +43,13 @@ export default function News({ id }) {
     }
   }, [status]);
 
-
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin bg-red-500"></div>
+      </div>
+    );
+  }
 
   if (status === "authenticated") {
     return (

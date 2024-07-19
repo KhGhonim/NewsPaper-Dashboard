@@ -1,10 +1,10 @@
-import Catagories from "../../../../components/SideBars/Catagories/Catagories";
-import PopularStories from "../../../../components/SideBars/PopularStories/PopularStories";
-import Tags from "../../../../components/SideBars/Tags/Tags";
-import ImageID from "./ImageID";
-import News from "./News";
+import ImageID from "app/(home)/(pages)/[id]/ImageID";
+import News from "app/(home)/(pages)/[id]/News";
+import Catagories from "components/SideBars/Catagories/Catagories";
+import PopularStories from "components/SideBars/PopularStories/PopularStories";
+import Tags from "components/SideBars/Tags/Tags";
 
-export default function page({ params }) {
+export default function page({params}) {
   const { id } = params;
 
   return (
@@ -14,7 +14,7 @@ export default function page({ params }) {
       <div className="container  mt-6">
         <div className="text-center">
           <h1 className="text-2xl font-bold capitalize">
-            Latest World News in {id}
+            Search :{id}
           </h1>
         </div>
 

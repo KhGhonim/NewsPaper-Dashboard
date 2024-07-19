@@ -1,8 +1,10 @@
 "use client";
-import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { FaSearchMinus } from "react-icons/fa";
 
 export default function SearchBar({ Search, setSearch }) {
+  const [SearchValue, setSearchValue] = useState(null);
   const SignUpModelCloser = () => {
     setSearch(!Search);
   };
@@ -40,13 +42,16 @@ export default function SearchBar({ Search, setSearch }) {
             id="search"
             className="w-full transition-all duration-300 ease-in-out border border-gray-300 rounded-lg px-1 py-2 outline-none focus:ring-2 text-black"
             placeholder="Search..."
+            onChange={(e) => setSearchValue(e.target.value.toLowerCase())}
+            defaultValue={SearchValue}
           />
-          <button
+          <Link
             className="absolute right-0 top-1/2 transform -translate-y-1/2 border border-transparent p-3 rounded-lg text-white bg-red-600"
             aria-label="Search"
+            href={`/search/${SearchValue}`}
           >
             <FaSearchMinus />
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -20,6 +20,9 @@ const commentsSchema = new Schema(
     postId: {
       type: String,
     },
+    UserId: {
+      type: String,
+    },
 
     numberoflikes: {
       type: Number,

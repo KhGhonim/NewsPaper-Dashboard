@@ -5,14 +5,26 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { FaHeart, FaTrash } from "react-icons/fa";
+import { FaEdit, FaHeart, FaTrash } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Comments() {
   const { data: session, status } = useSession();
   const [comment, setcomment] = useState("");
   const [ComnentData, setComnentData] = useState([]);
   const [Isloading, setIsloading] = useState(false);
+  const [Editor, setEditor] = useState(false);
+  const [NewEditedComment, setNewEditedComment] = useState("");
+  const [EditId, setEditId] = useState(null);
   const UrlID = useParams().id;
+
+  const HandleEdit = (content) => {
+    setEditor(true);
+    setNewEditedComment(content);
+  };
+
+  // add new comments to the database
   const CommentHandler = async (eo) => {
     eo.preventDefault();
     if (comment.length > 200) {
@@ -37,6 +49,7 @@ export default function Comments() {
     setIsloading(false);
   };
 
+  //Get all the comments
   useEffect(() => {
     const GetComments = async () => {
       const res = await fetch(`/api/getComments?postId=${UrlID}`, {
@@ -53,6 +66,54 @@ export default function Comments() {
 
     GetComments();
   }, []);
+
+  // Delete a comment
+  const DeleteComment = async (id) => {
+    const res = await fetch(`/api/deleteComment?id=${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "no-cache",
+      next: { revalidate: 0 },
+    });
+    const data = await res.json();
+    console.log(data);
+    if (res.ok) {
+      toast.success("Comment deleted successfully");
+      setComnentData(ComnentData.filter((comment) => comment._id !== id));
+    } else {
+      console.error("Failed to delete comment:", data); // Log error if any
+    }
+  };
+
+  const UpdateComment = async (eo) => {
+    eo.preventDefault();
+    const res = await fetch(`/api/update/updateComment?id=${EditId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ comment: NewEditedComment }),
+      cache: "no-cache",
+      next: { revalidate: 0 },
+    });
+    const data = await res.json();
+
+    if (res.ok) {
+      toast.success("Comment updated successfully");
+      setComnentData(
+        ComnentData.map((comment) =>
+          comment._id === EditId
+            ? { ...comment, content: NewEditedComment }
+            : comment
+        )
+      );
+      setEditor(false);
+    } else {
+      console.error("Failed to delete comment:", data); // Log error if any
+    }
+  };
 
   return (
     <div className="max-w-2xl mx-auto p-4  rounded-lg shadow-md">
@@ -82,11 +143,30 @@ export default function Comments() {
                 </div>
                 <div className="flex space-x-5">
                   <button className=" transition-colors duration-200 hover:scale-110">
-                    <FaHeart color="red" />
+                    <FaHeart color="black" />
                   </button>
-                  <button className="transition-colors duration-200 hover:scale-110">
-                    <FaTrash color="gray" />
-                  </button>
+                  {status === "authenticated" ? (
+                    <div className="flex space-x-5">
+                      <button className=" transition-colors duration-200 hover:scale-110 ">
+                        <FaTrash
+                          onClick={() => DeleteComment(comment._id)}
+                          color="gray"
+                          className=" hover:text-red-500"
+                        />
+                      </button>
+
+                      <button className=" transition-colors duration-200 hover:scale-110 ">
+                        <FaEdit
+                          onClick={() => {
+                            HandleEdit(comment.content);
+                            setEditId(comment._id);
+                          }}
+                          color="gray"
+                          className=" hover:text-red-500"
+                        />
+                      </button>
+                    </div>
+                  ) : null}
                 </div>
               </div>
             );
@@ -132,6 +212,57 @@ export default function Comments() {
           </p>
         </div>
       )}
+      <ToastContainer />
+
+      <div
+        className={`fixed inset-0 flex items-center justify-center transition-all duration-500 ease-in-out bg-black bg-opacity-50 z-50 ${
+          Editor ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="bg-white text-black p-6 rounded-lg shadow-lg w-full max-w-md">
+          <h2 className="text-xl font-semibold mb-4">Update Comment</h2>
+          <form
+            onSubmit={UpdateComment}
+            id="comment-form"
+            className="space-y-4"
+          >
+            <div>
+              <label
+                htmlFor="comment"
+                className="block text-sm font-medium text-muted-foreground"
+              >
+                Your New Comment
+              </label>
+              <textarea
+                value={NewEditedComment}
+                onChange={(eo) => setNewEditedComment(eo.target.value)}
+                id="comment"
+                name="comment"
+                className="mt-1 block w-full p-2.5 border border-input rounded-md bg-background text-foreground focus:ring-primary focus:border-primary"
+                placeholder="Write your comment here..."
+              ></textarea>
+              <p className="text-gray-500 text-xs">
+                {200 - NewEditedComment.length} characters remaining
+              </p>
+            </div>
+            <div className="flex justify-end space-x-2">
+              <button
+                onClick={() => setEditor(false)}
+                type="button"
+                className="bg-gray-400 text-black hover:bg-gray-500 transition-all duration-200 ease-in-out  px-4 py-2 rounded-md"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="bg-red-500 text-white hover:bg-red-700 transition-all duration-200 ease-in-out  px-4 py-2 rounded-md"
+              >
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }

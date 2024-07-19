@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function PUT(request) {
   await connectMongoDB();
 
-  const { comment } = await request.json();
+  const { comment, UserEmail } = await request.json();
   const id = request.nextUrl.searchParams.get("id");
 
   if (!comment) {
@@ -20,10 +20,12 @@ export async function PUT(request) {
     return NextResponse.json({ error: "comment is too long" }, { status: 400 });
   }
 
-  const admin = await UserModel.find({ isAdmin: true });
+  const admin = await UserModel.find({ isAdmin: true, email: UserEmail });
 
-  if (!admin) {
-    return NextResponse.json({ error: "admin not found" }, { status: 400 });
+  console.log(admin);
+
+  if (admin.length === 0) {
+    return NextResponse.json({ error: "You're not an Admin, sorry!" }, { status: 400 });
   }
 
   const updatedComment = await CommentModel.findByIdAndUpdate(

@@ -86,7 +86,7 @@ export default function Comments() {
       console.error("Failed to delete comment:", data); // Log error if any
     }
   };
-
+  const UserEmail = session?.user?.email;
   const UpdateComment = async (eo) => {
     eo.preventDefault();
     const res = await fetch(`/api/update/updateComment?id=${EditId}`, {
@@ -94,7 +94,7 @@ export default function Comments() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ comment: NewEditedComment }),
+      body: JSON.stringify({ comment: NewEditedComment, UserEmail }),
       cache: "no-cache",
       next: { revalidate: 0 },
     });
@@ -111,7 +111,8 @@ export default function Comments() {
       );
       setEditor(false);
     } else {
-      console.error("Failed to delete comment:", data); // Log error if any
+      toast.error("Only Admin allow to update comments"); // Log error if any
+      setEditor(false);
     }
   };
 

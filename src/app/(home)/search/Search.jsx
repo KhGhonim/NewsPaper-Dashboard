@@ -6,12 +6,10 @@ export default function Search() {
   const searchParams = useSearchParams();
   const search = searchParams.get("q");
   const [SearchData, setSearchData] = useState([]);
-  const [loading, setLoading] = useState(false);
   useEffect(() => {
     const localhost = process.env.NEXT_PUBLIC_JSON_URL;
 
     const getData = async () => {
-      setLoading(true);
       try {
         const res = await fetch(localhost, {
           cache: "no-cache",
@@ -42,20 +40,10 @@ export default function Search() {
       }
     };
 
-    setLoading(false);
-
     if (search) {
       getData();
     }
   }, [search]);
-
-  if (!search || (search === "" && loading)) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin bg-red-500"></div>
-      </div>
-    );
-  }
 
   return (
     <div id="w-full  ">

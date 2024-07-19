@@ -1,8 +1,8 @@
-import Catagories from "components/SideBars/Catagories/Catagories";
-import PopularStories from "components/SideBars/PopularStories/PopularStories";
-import Tags from "components/SideBars/Tags/Tags";
-import ImageID from "../ImageID";
-import News from "../News";
+import Catagories from "../../../../../components/Catagories/BestInCatagories/BestInCatagories";
+import PopularStories from "../../../../../components/SideBars/PopularStories/PopularStories";
+import Tags from "../../../../../components/SideBars/Tags/Tags";
+import ImageID from "./ImageID";
+import News from "./News";
 
 
 export default function page({ params }) {

@@ -48,7 +48,7 @@ export default function SearchBar({ Search, setSearch }) {
           <Link
             className="absolute right-0 top-1/2 transform -translate-y-1/2 border border-transparent p-3 rounded-lg text-white bg-red-600"
             aria-label="Search"
-            href={`/search/${SearchValue}`}
+            href={`/search?q=${SearchValue}`}
           >
             <FaSearchMinus />
           </Link>

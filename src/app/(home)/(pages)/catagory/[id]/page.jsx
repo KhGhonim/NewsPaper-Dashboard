@@ -1,8 +1,8 @@
 import Catagories from "../../../../../components/SideBars/Catagories/Catagories";
 import PopularStories from "../../../../../components/SideBars/PopularStories/PopularStories";
 import Tags from "../../../../../components/SideBars/Tags/Tags";
-import ImageID from "./ImageID";
-import News from "./News";
+import ImageID from "../ImageID.jsx";
+import News from "../News.jsx";
 
 export default function page({ params }) {
   const { id } = params;

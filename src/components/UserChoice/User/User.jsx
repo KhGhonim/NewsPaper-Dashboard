@@ -8,14 +8,12 @@ import { useEffect, useState } from "react";
 export default function User() {
   const [UserData, setUserData] = useState([]);
   const [visibleNews, setVisibleNews] = useState(4);
-  const [Isloading, setIsloading] = useState(false);
   const handleReadAllNews = () => {
     setVisibleNews((prev) => prev + 4);
   };
 
   useEffect(() => {
     const getData = async () => {
-      setIsloading(true);
       const res = await fetch("/api/getUsersArticle", {
         cache: "no-cache",
         next: { revalidate: 0 },
@@ -30,13 +28,11 @@ export default function User() {
     };
 
     getData();
-
-    setIsloading(false);
   }, []);
 
-  if (Isloading) {
+  if (UserData.length === 0) {
     return (
-      <div className="h-screen flex justify-center items-center ">
+      <div className="h-screen flex justify-center items-center w-screen ">
         <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin bg-red-500"></div>
       </div>
     );

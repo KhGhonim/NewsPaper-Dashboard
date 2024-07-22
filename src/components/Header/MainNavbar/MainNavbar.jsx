@@ -156,12 +156,27 @@ export default function MainNavbar({ isMainNavbarFixed }) {
                         role="menuitem"
                       >
                         <Link
-                          href={`/${item.name}`}
+                          href={`/`}
                           className="flex justify-between items-center"
+                          onClick={() => handleMouseEnter(index)}
                         >
                           <span>{item.name}</span>
                           <FaChevronRight color="red" className="" size={10} />
                         </Link>
+
+                        {activeIndex === index && (
+                          <div className={` pl-2`}>
+                            {item.submenu.map((submenuItem, subIndex) => (
+                              <Link
+                                href={`/`}
+                                key={subIndex}
+                                className={` block px-4 py-2 text-sm text-gray-500 hover:text-gray-100 hover:font-bold hover:translate-x-1 transition-all duration-300 ease-out`}
+                              >
+                                {submenuItem}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     );
                   })}

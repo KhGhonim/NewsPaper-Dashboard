@@ -10,6 +10,9 @@ import Catagories from "../../components/SideBars/Catagories/Catagories";
 import SliderTrendingNews from "../../components/SliderTrendingNews/SliderTrendingNews";
 import { ToastContainer } from "react-toastify";
 import EditorChoice from "../../components/SideBars/EditorChoice/EditorChoice";
+import BestInCatagories from "../../components/Catagories/BestInCatagories/BestInCatagories";
+import VerticalCatagories from "../../components/Catagories/VerticalCatagories/VerticalCatagories";
+import FeaturedVideo from "../../components/FeaturedVideo/FeaturedVideo";
 
 export const metadata = {
   title: "KGNEWS App",
@@ -39,16 +42,18 @@ export default function Home() {
           <Catagories />
         </div>
       </div>
-      {/* <FeaturedVideo /> */}
+    <div className="hidden md:block">
+    <FeaturedVideo />
+    </div>
 
-      {/* <div className="flex">
+      <div className="flex md:p-10 bg-gray-100">
         <div className=" w-1/2  px-5 max-sm:w-full">
           <BestInCatagories />
         </div>
         <div className=" w-1/2 max-sm:hidden">
-          <VerticalCatagories  />
+          <VerticalCatagories />
         </div>
-      </div> */}
+      </div>
       <SliderTrendingNews />
 
       <ToastContainer />

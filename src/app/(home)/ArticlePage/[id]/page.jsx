@@ -11,20 +11,16 @@ import { useEffect, useState } from "react";
 
 export default function page({ params }) {
   const { id: UrlID } = params;
-  const [isloading, setisloading] = useState(false);
 
   const [DataForOneArticle, setDataForOneArticle] = useState([]);
   useEffect(() => {
     if (UrlID) {
-      setisloading(true);
       const fetchData = async () => {
         const response = await fetch(`/api/getUsersArticle`);
         const data = await response.json();
         setDataForOneArticle(data);
       };
       fetchData();
-
-      setisloading(false);
     }
   }, [UrlID]);
 
@@ -32,22 +28,14 @@ export default function page({ params }) {
     return item._id === UrlID;
   });
 
-  const {
-    source,
-    author,
-    title,
-    catagory,
-
-    postImage,
-    createdAt,
-    content,
-  } = FiltereArticle || {};
+  const { source, author, title, catagory, postImage, createdAt, content } =
+    FiltereArticle || {};
 
   const CatagoriesRelatedArticles = DataForOneArticle.filter((item) => {
     return item.catagory === catagory;
   });
 
-  if (isloading) {
+  if (DataForOneArticle.length === 0) {
     return (
       <div className="h-screen flex justify-center items-center ">
         <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin bg-red-500"></div>

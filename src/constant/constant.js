@@ -2,12 +2,12 @@ import { FaRegUser, FaSearch } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 
 export const menuItems = [
-  { name: "Home", submenu: ["Submenu 1", "Submenu 2"] },
-  { name: "Posts", submenu: ["Submenu 1", "Submenu 2"] },
-  { name: "Business", submenu: ["Submenu 1", "Submenu 2"] },
-  { name: "Technology", submenu: ["Submenu 1", "Submenu 2"] },
-  { name: "Shop", submenu: ["Submenu 1", "Submenu 2"] },
-  { name: "Pages", submenu: ["Submenu 1", "Submenu 2"] },
+  { name: "Home", submenu: ["Submenu 1", "Submenu 1"] },
+  { name: "Posts", submenu: ["Submenu 2", "Submenu 2"] },
+  { name: "Business", submenu: ["Submenu 3", "Submenu 3"] },
+  { name: "Technology", submenu: ["Submenu 4", "Submenu 4"] },
+  { name: "Shop", submenu: ["Submenu 5", "Submenu 5"] },
+  { name: "Pages", submenu: ["Submenu 6", "Submenu 6"] },
 ];
 
 export const ActionItems = [
@@ -20,7 +20,7 @@ export const CATEGORY_IMAGES = [
   {
     name: "Health",
     image:
-      "https://indiansportsassociation.org/wp-content/uploads/2019/06/banner.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTM74-Ge-ZW9SATdbEeYmPfRgWmLOAUmaDboLZ-1wp87tLJ0pAzh-3dreUrBd0kGQ12t9U&usqp=CAU",
     link: "/Health",
   },
   {

@@ -10,8 +10,6 @@
   align-items: center;
 }
 
-
-
 .autoplay-progress {
   position: absolute;
   right: 16px;
@@ -41,6 +39,8 @@
   stroke-dasharray: 125.6;
   transform: rotate(-90deg);
 }
+
+
 
 
 

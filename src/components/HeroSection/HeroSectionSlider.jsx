@@ -42,7 +42,7 @@ export default function HeroSectionSlider() {
 
   const filterData = arrData?.filter((item) => item?.Youtube !== "true");
 
-  if (!arrData && arrData.length === 0) {
+  if (arrData.length === 0) {
     return <Loading />;
   }
 
@@ -82,14 +82,16 @@ export default function HeroSectionSlider() {
               <div className="absolute top-[20%] max-sm:top-0 left-0 z-30 p-8  ">
                 <div className="flex flex-col space-y-4">
                   <div className="text-white text-center bg-red-600 p-2 max-w-40 overflow-clip font-extrabold rounded-lg">
-                    <h1>{item.source.name}</h1>
+                    <h1 className="max-sm:text-sm text-base">
+                      {item.source.name}
+                    </h1>
                   </div>
 
                   <div className="text-white pl-6 text-start font-bold text-2xl max-sm:text-lg w-full">
                     <h1>{item.title}</h1>
                   </div>
 
-                  <div className="text-white  font-medium text-base max-sm:text-sm w-2/4 max-sm:w-full">
+                  <div className="text-white  font-medium text-base max-sm:text-xs w-3/4 max-sm:w-full overflow-hidden">
                     <h1>{item.description}</h1>
                   </div>
 

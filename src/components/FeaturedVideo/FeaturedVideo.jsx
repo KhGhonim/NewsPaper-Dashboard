@@ -4,16 +4,14 @@ export default function FeaturedVideo() {
   return (
     <div className="relative w-screen h-[600px] max-sm:h-[1000px] mt-2 ">
       <div className="w-full h-full bg-[#191919] z-10 absolute inset-0  ">
-        <div className="container mx-auto flex flex-wrap justify-center items-center   p-4 text-white">
-          <div className="w-full lg:w-2/3 p-4">
-            <div className="flex max-sm:justify-between  items-center mb-4">
+        <div className=" flex flex-wrap justify-center items-center    text-white">
+          <div className="w-full lg:w-5/6 p-4">
+            <div className="flex max-sm:justify-between  items-center mb-6">
               <div className="flex justify-center items-center  gap-4">
                 <h2 className="text-3xl font-bold max-sm:text-xl">
                   Featured Video
                 </h2>
-                <span className=" text-xs">
-                  Stay up-to-date
-                </span>
+                <span className=" text-xs">Stay up-to-date</span>
                 <div className="h-1  bg-red-500"></div>
               </div>
               <div className="hidden md:flex  flex-grow h-0.5 bg-gray-300 mr-6"></div>
@@ -27,8 +25,6 @@ export default function FeaturedVideo() {
 
             <FeaturedVideoSlider />
           </div>
-
-
         </div>
       </div>
     </div>

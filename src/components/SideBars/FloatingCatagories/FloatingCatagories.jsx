@@ -32,7 +32,7 @@ export default function FloatingCatagories() {
     <div
       className={`fixed top-1/3 transition-all duration-300 ease-in-out ${
         isHidden ? "translate-x-full" : "translate-x-0"
-      } bg-slate-100 h-72 p-3 right-0 flex flex-col bg-card shadow-lg rounded-3xl z-40`}
+      } bg-slate-100 h-72 p-3 right-0 flex flex-col bg-card shadow-lg rounded-3xl z-50`}
     >
       {FloatingCatagoriesitems.map((item, index) => (
         <div

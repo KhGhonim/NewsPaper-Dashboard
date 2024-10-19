@@ -37,7 +37,7 @@ export default function VerticalCatagories() {
           }
           return (
             <Link
-              href={`/}`}
+              href={`/WorldPage/${item.id}`}
               key={index}
               className="flex flex-col md:flex-row bg-white rounded-lg shadow-md overflow-hidden my-5 h-96  "
             >

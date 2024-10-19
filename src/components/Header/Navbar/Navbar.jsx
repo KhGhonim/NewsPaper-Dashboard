@@ -39,7 +39,7 @@ export default function Navbar() {
 
 
   return (
-    <div className="relative w-screen">
+    <div className="relative w-screen  h-full overflow-hidden">
       {/* Upper Navbar */}
       <UpperNavbar isUpperNavbarVisible={isUpperNavbarVisible} />
       {/* Main Navbar */}

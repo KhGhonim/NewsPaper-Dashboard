@@ -42,9 +42,9 @@ export default function Home() {
           <Catagories />
         </div>
       </div>
-    <div className="hidden md:block">
-    <FeaturedVideo />
-    </div>
+      <div className="hidden md:block">
+        <FeaturedVideo />
+      </div>
 
       <div className="flex md:p-10 bg-gray-100">
         <div className=" w-1/2  px-5 max-sm:w-full">

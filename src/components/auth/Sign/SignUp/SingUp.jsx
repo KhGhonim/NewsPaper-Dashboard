@@ -10,6 +10,10 @@ export default function SingUp() {
   const [ConfirmPW, setConfirmPW] = useState(null);
   const router = useRouter();
 
+
+/**
+ * Function to handle user sign up process
+ */
   const HandleSignUp = async (eo) => {
     eo.preventDefault();
     setloading(true);

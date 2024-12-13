@@ -25,9 +25,9 @@ export default function UpperNavbar({ isUpperNavbarVisible }) {
         className={` container flex items-center w-full px-4 md:px-10 lg:px-20`}
       >
         <div className="text-[#f7fafc] border-r-2 w-24 sm:w-28 border-gray-600 pr-4 flex items-center text-center gap-2 md:gap-3 font-bold">
-          <p className="text-xl sm:text-2xl md:text-3xl">{day}</p>
+          <p className="text-xs sm:text-base md:text-xl">{day}</p>
           <div>
-            <p className="text-xs sm:text-base md:text-base">{month}</p>
+            <p className="text-xs sm:text-sm ">{month}</p>
             <p className="text-xs sm:text-base md:text-base">{year}</p>
           </div>
         </div>

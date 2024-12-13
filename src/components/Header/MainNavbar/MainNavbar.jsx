@@ -14,6 +14,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import CartIPopup from "../Cart/CartIPopup";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
+import { IoMdArrowDropright } from "react-icons/io";
 
 export default function MainNavbar({ isMainNavbarFixed }) {
   const { data: session, status } = useSession();
@@ -60,11 +61,11 @@ export default function MainNavbar({ isMainNavbarFixed }) {
   };
 
   return (
-    <div className="relative">
+    <div className="relative  z-50">
       <div
-        className={`   ${
-          isMainNavbarFixed ? "fixed -translate-y-full max-md:mt-6" : "block "
-        } transition-all  duration-500 ease-in-out bg-white text-black  w-full  md:px-10 lg:px-16 shadow-sm z-50 `}
+        className={`${
+          isMainNavbarFixed ? "fixed top-0" : "-top-full"
+        } transition-[top] duration-700 ease-out bg-white text-black w-full md:px-10 lg:px-16 shadow-sm`}
       >
         <div
           className={` relative container flex justify-between items-center   h-20 `}
@@ -91,7 +92,7 @@ export default function MainNavbar({ isMainNavbarFixed }) {
 
           {/* List of menu items for large screens */}
           <div className="hidden md:flex">
-            <ul className="flex justify-center items-center gap-9 relative">
+            <ul className="flex justify-center items-center gap-9 relative ">
               {menuItems.map((item, index) => (
                 <li
                   key={index}
@@ -110,15 +111,20 @@ export default function MainNavbar({ isMainNavbarFixed }) {
                     size={10}
                   />
                   {activeIndex === index && (
-                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 z-10 opacity-100">
-                      <div className="pt-7 ">
-                        <ul className="w-40 bg-[#292929] text-white p-2 rounded shadow-lg">
+                    <div className="absolute top-[100%] left-1/2 -translate-x-1/2 opacity-100 z-50">
+                      <div className="pt-4">
+                        <ul className="w-48 bg-gray-800 text-white p-4 rounded-lg shadow-lg">
                           {item.submenu.map((submenuItem, subIndex) => (
                             <li
                               key={subIndex}
-                              className="py-1 px-4 hover:bg-gray-900 cursor-pointer"
+                              className="py-2 px-4 flex justify-start items-center gap-3 group hover:bg-gray-700 rounded-md cursor-pointer transition-all duration-300 ease-in-out"
                             >
-                              {submenuItem}
+                              <span className="transform transition-transform duration-300 ease-in-out text-xl group-hover:translate-x-1 group-hover:text-red-500">
+                                <IoMdArrowDropright />
+                              </span>
+                              <span className="text-sm font-medium group-hover:text-red-500">
+                                {submenuItem}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -131,7 +137,6 @@ export default function MainNavbar({ isMainNavbarFixed }) {
           </div>
 
           {/* Humburger Icon */}
-
           <div className="relative flex justify-center items-center  ml-6 border-r-2 border-l-2 max-md:h-15 md:h-20 ">
             <div ref={ref} className="relative md:hidden  ">
               <div
@@ -144,42 +149,40 @@ export default function MainNavbar({ isMainNavbarFixed }) {
               </div>
 
               <div
-                className={`${Menu} absolute right-0 z-10 mt-2 w-56 rounded-lg overflow-hidden   bg-[#292929] shadow-lg text-grey-300`}
+                className={`${Menu} absolute right-0 z-50 mt-2 w-60 rounded-lg overflow-hidden bg-gray-800 shadow-lg text-gray-300`}
                 role="menu"
               >
-                <div className="p-2">
-                  {menuItems.map((item, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className=" rounded-lg px-4 py-2 text-sm text-gray-500 hover:text-gray-100 hover:font-bold  hover:translate-x-1 transition-all duration-300 ease-out"
-                        role="menuitem"
+                <div className="p-3">
+                  {menuItems.map((item, index) => (
+                    <div
+                      key={index}
+                      className="rounded-lg px-4 py-3 text-sm text-gray-400 hover:text-white hover:bg-gray-700 hover:font-semibold transition-all duration-300 ease-out"
+                      role="menuitem"
+                    >
+                      <Link
+                        href="#"
+                        className="flex justify-between items-center"
+                        onClick={() => handleMouseEnter(index)}
                       >
-                        <Link
-                          href={`/`}
-                          className="flex justify-between items-center"
-                          onClick={() => handleMouseEnter(index)}
-                        >
-                          <span>{item.name}</span>
-                          <FaChevronRight color="red" className="" size={10} />
-                        </Link>
+                        <span>{item.name}</span>
+                        <FaChevronRight color="red" size={12} />
+                      </Link>
 
-                        {activeIndex === index && (
-                          <div className={` pl-2`}>
-                            {item.submenu.map((submenuItem, subIndex) => (
-                              <Link
-                                href={`/`}
-                                key={subIndex}
-                                className={` block px-4 py-2 text-sm text-gray-500 hover:text-gray-100 hover:font-bold hover:translate-x-1 transition-all duration-300 ease-out`}
-                              >
-                                {submenuItem}
-                              </Link>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
+                      {activeIndex === index && (
+                        <div className="pl-4 mt-2 space-y-2">
+                          {item.submenu.map((submenuItem, subIndex) => (
+                            <Link
+                              href="#"
+                              key={subIndex}
+                              className="block px-4 py-2 text-sm text-gray-400 hover:text-white hover:bg-gray-700 hover:font-semibold rounded transition-all duration-300 ease-out"
+                            >
+                              {submenuItem}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

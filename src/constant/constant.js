@@ -2,12 +2,51 @@ import { FaRegUser, FaSearch } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 
 export const menuItems = [
-  { name: "Home", submenu: ["Submenu 1", "Submenu 1"] },
-  { name: "Posts", submenu: ["Submenu 2", "Submenu 2"] },
-  { name: "Business", submenu: ["Submenu 3", "Submenu 3"] },
-  { name: "Technology", submenu: ["Submenu 4", "Submenu 4"] },
-  { name: "Shop", submenu: ["Submenu 5", "Submenu 5"] },
-  { name: "Pages", submenu: ["Submenu 6", "Submenu 6"] },
+  {
+    name: "Home",
+    submenu: ["Top Stories", "Breaking News", "Live Updates"],
+  },
+  {
+    name: "World",
+    submenu: ["Americas", "Europe", "Asia", "Africa", "Middle East", "Oceania"],
+  },
+  {
+    name: "Politics",
+    submenu: [
+      "Government",
+      "Elections",
+      "Policy",
+      "Local Politics",
+      "International Relations",
+    ],
+  },
+  {
+    name: "Business",
+    submenu: [
+      "Market Trends",
+      "Finance",
+      "Economy",
+      "Companies",
+      "Real Estate",
+    ],
+  },
+  {
+    name: "Technology",
+    submenu: ["AI", "Gadgets", "Software", "Cybersecurity", "Startups"],
+  },
+  {
+    name: "Science",
+    submenu: ["Space", "Environment", "Health", "Biology", "Physics"],
+  },
+  {
+    name: "Sports",
+    submenu: ["Football", "Basketball", "Tennis", "Olympics", "Baseball"],
+  },
+
+  {
+    name: "More",
+    submenu: ["About Us", "Contact", "Privacy Policy", "Terms of Service"],
+  },
 ];
 
 export const ActionItems = [

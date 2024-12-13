@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="w-full h-full overflow-hidden">
       <HeroSectionSlider />
       <div className="flex ">
         <div className="flex-col w-2/3">
@@ -57,6 +57,6 @@ export default function Home() {
       <SliderTrendingNews />
 
       <ToastContainer />
-    </>
+    </div>
   );
 }
